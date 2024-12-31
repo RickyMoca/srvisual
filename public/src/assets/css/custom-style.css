@@ -1,13 +1,17 @@
 
+/*!
+ * Moca v1.0.0 (moca)
+ * Copyright 2011-2018 The moca Authors
+ */ 
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap'); @import url('/fonts/edwardianscriptitc/fonts.css'); :root {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap'); :root {
     --inv-bg: #ffffff;
     --inv-base: #000000;
     --inv-accent: #515F6B;
     --inv-border: #515F6B;
     --font-base: "Source Code Pro", monospace;
     --font-accent: "Bebas Neue", cursive;
-    --font-latin: "Edwardian Script ITC", cursive;
+    --font-latin: "Yesteryear", serif;
     --menu-bg: #20262c;
     --menu-inactive: #ffffff;
     --menu-active: #515F6B;
