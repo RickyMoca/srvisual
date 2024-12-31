@@ -1,0 +1,93 @@
+{
+  "page_title": "Wedding  - Passport - Seny & Ricky",        
+  "page_author": "Mohamad Ricky",
+  
+  "countdown" : "2025-02-02T08:00",
+  "css_path": [
+    "/styles/main.css",
+    "/styles/theme.css"
+  ],
+  "js_path": [
+    "/scripts/main.js",
+    "/scripts/utils.js"
+  ],
+  "menu": [
+    { "name": "Cover","icon": "bx bx-home-heart","page":"cover.html"},
+    { "name": "Opening","icon": "bx bx-home-heart" ,"page":"opening.html"},
+    { "name": "Bride","icon": "bx bx-heart-circle" ,"page":"bride.html"},
+    { "name": "Groom","icon": "bx bx-heart-square" ,"page":"groom.html"},
+    { "name": "Gallery","icon": "bx bx-photo-album" ,"page":"gallery.html"},
+    { "name": "Event","icon": "bx bx-calendar-heart" ,"page":"event.html"},
+    { "name": "Story","icon": "bx bx-time" ,"page":"story.html"},
+    { "name": "Drescode","icon": "bx bx-palette" ,"page":"drescode.html"},
+    { "name": "Location","icon": "bx bx-map" ,"page":"location.html"},
+    { "name": "Gift","icon": "bx bx-gift" ,"page":"gift.html"},
+    { "name": "RSVP","icon": "bx bx-copy-alt" ,"page":"rsvp.html"},
+    { "name": "Thanks","icon": "bx bxs-hand" ,"page":"thanks.html"}
+],
+  "story": [
+    { "time": "19-10-2023","title": "Bertemu", "description": "Berawal dari ...."},
+    { "time": "19-10-2024","title": "Engagement", "description": "Kami bertunangan"},
+    { "time": "02-02-2025","title": "Menikah", "description": "Kami memutuskan untuk melangkah lebih serius untuk menikah"}
+
+],
+"gallery": [
+  "src/assets/photos/kompres_8.jpg",
+  "src/assets/photos/kompres_2.png",
+  "src/assets/photos/kompres_3.png",
+  "src/assets/photos/kompres_4.png",
+  "src/assets/photos/kompres_5.png",
+  "src/assets/photos/kompres_6.png",
+  "src/assets/photos/kompres_8.jpg",
+  "src/assets/photos/kompres_9.png"
+],
+"event": [
+  {
+    "name": "AKAD",
+    "date": "02 FEBRUARY 2025",
+    "time": "08:00 WIB S/D SELESAI",
+    "location": "VILLA VITA",
+    "description": "Khusus Kluarga"
+  },
+  {
+    "name": "Resepsi",
+    "date": "02 FEBRUARY 2025",
+    "time": "11:00 WIB S/D 14:00",
+    "location": "VILLA VITA",
+    "description": ""
+  }
+],
+"bride": [
+  {
+    "photo": "src/assets/photos/20241110-IMG_5085-2.jpg",
+    "type": "MEMPELAI WANITA",
+    "name": "SENY INDRIANI",
+    "putraDari": "BAPAK. MIYANTO & IBU NELIS NURHAYATI",
+    "description": "@_SENYINDRIANI"
+  }
+],
+"groom": [
+  {
+    "photo": "src/assets/photos/20241110-IMG_5085-2.jpg",
+    "type": "MEMPELAI PRIA",
+    "name": "MOHAMAD RICKY",
+    "putraDari": "BAPAK. DEDE & IBU IIS AISYAH",
+    "description": "@rickymocaa"
+  }
+],
+"location": [
+  {
+    "name": "Villa Vita",
+    "address": "Jl. Pagermaneuh No.50, Pagerwangi, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
+    "maps_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1168.7471201985038!2d107.61971898888261!3d-6.838728932249548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e1000715a941%3A0x9bcbf42245e1046a!2sVilla%20Vita!5e0!3m2!1sen!2sid!4v1735189058385!5m2!1sen!2sid",
+    "maps_link": "https://www.google.com/maps/place/Villa+Vita/@-6.8387289,107.619719,18.76z/data=!4m14!1m7!3m6!1s0x2e68e1000715a941:0x9bcbf42245e1046a!2sVilla+Vita!8m2!3d-6.8387815!4d107.6196131!16s%2Fg%2F11y48mt5qs!3m5!1s0x2e68e1000715a941:0x9bcbf42245e1046a!8m2!3d-6.8387815!4d107.6196131!16s%2Fg%2F11y48mt5qs?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+  }
+],
+"thanks": [
+  {
+    "name": "Seny & Ricky",
+    "description": "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami."
+  }
+]
+
+}

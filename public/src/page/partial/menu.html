@@ -1,0 +1,13 @@
+    <!-- menuu -->
+    <div id="smMenu" class="satumomen_menu">
+        <ul class="satumomen_menu_list">
+            {% for item in menu %}
+             <li class="satumomen_menu_item">
+              <i class='{{item.icon}}'></i>
+              <span>{{item.name}}</span>
+             </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
