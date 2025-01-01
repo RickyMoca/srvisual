@@ -145,23 +145,6 @@
             showModal(rsvpModal)
         }
         ;
-    O && F && (F.innerHTML = "",
-    F.appendChild(O));
-    var R = null !== (n = document.getElementById("app")) && void 0 !== n ? n : null
-      , j = null !== (o = document.getElementById("illegal")) && void 0 !== o ? o : null
-      , z = null !== (a = document.getElementById("waterMark")) && void 0 !== a ? a : null
-      , P = null !== (l = document.querySelector(".watermark-placeholder")) && void 0 !== l ? l : null
-      , U = null !== (i = document.querySelector(".no-watermark")) && void 0 !== i ? i : null
-      , G = null !== (s = document.querySelector(".watermark")) && void 0 !== s ? s : null;
-    setTimeout((function() {
-        z && P && null == U ? (z.style.display = "inherit",
-        P.innerHTML = "",
-        P.appendChild(z),
-        j.style.display = "none") : G && null == P ? (R.innerHTML = "",
-        j.style.display = "flex") : (z && (z.style.display = "none"),
-        j.style.display = "none")
-    }
-    ), 300);
     for (var X = document.getElementsByClassName("account-number"), Z = 0; Z < X.length; Z++)
         X[Z].style.display = "inline",
         X[Z].innerHTML && ("id" == c ? X[Z].insertAdjacentHTML("afterend", "<button type='button' class='btn btn-sm btn-primary ml-2 mb-1 animate__animated animate__zoomIn animate__slow delay-5' data-text='".concat(X[Z].innerText, "' onclick='copyText(event)' style='font-family: sans-serif; border-radius: 4px; line-height: 1'>Salin</button>")) : X[Z].insertAdjacentHTML("afterend", "<button type='button' class='btn btn-sm btn-primary ml-2 mb-1 animate__animated animate__zoomIn animate__slow delay-5' data-text='".concat(X[Z].innerText, "' onclick='copyText(event)' style='font-family: sans-serif; border-radius: 4px; line-height: 1'>Copy</button>")));

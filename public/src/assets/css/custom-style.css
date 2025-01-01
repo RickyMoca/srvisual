@@ -27,7 +27,7 @@
 }
 
 #opening .container-mobile{
-    background-image: url('../img-bg/bg-simple.webp'); /* Relative terhadap lokasi file CSS */
+    background-image: url('../img/img-bg/bg-simple.webp'); /* Relative terhadap lokasi file CSS */
 }
 
 
@@ -36,7 +36,7 @@
 #gallery .container-mobile,
 #bride .container-mobile,
 #groom .container-mobile{
-    background-image: url('../img-bg/bg-primary.webp'); /* Relative terhadap lokasi file CSS */
+    background-image: url('../img/img-bg/bg-primary.webp'); /* Relative terhadap lokasi file CSS */
 }
 .img-bride-groom {
     width: 100%;

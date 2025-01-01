@@ -12,17 +12,17 @@
     "/scripts/utils.js"
   ],
   "menu": [
-    { "name": "Cover","icon": "bx bx-home-heart","page":"cover.html"},
-    { "name": "Opening","icon": "bx bx-home-heart" ,"page":"opening.html"},
-    { "name": "Bride","icon": "bx bx-heart-circle" ,"page":"bride.html"},
-    { "name": "Groom","icon": "bx bx-heart-square" ,"page":"groom.html"},
-    { "name": "Gallery","icon": "bx bx-photo-album" ,"page":"gallery.html"},
-    { "name": "Event","icon": "bx bx-calendar-heart" ,"page":"event.html"},
-    { "name": "Story","icon": "bx bx-time" ,"page":"story.html"},
-    { "name": "Drescode","icon": "bx bx-palette" ,"page":"drescode.html"},
-    { "name": "Location","icon": "bx bx-map" ,"page":"location.html"},
-    { "name": "Gift","icon": "bx bx-gift" ,"page":"gift.html"},
-    { "name": "RSVP","icon": "bx bx-copy-alt" ,"page":"rsvp.html"},
+    { "name": "Cover","icon": "bx bxs-envelope-open","page":"cover.html"},
+    { "name": "Opening","icon": "bx bxs-quote-alt-left" ,"page":"opening.html"},
+    { "name": "Bride","icon": "bx bxs-heart-circle" ,"page":"bride.html"},
+    { "name": "Groom","icon": "bx bxs-heart-square" ,"page":"groom.html"},
+    { "name": "Gallery","icon": "bx bxs-image" ,"page":"gallery.html"},
+    { "name": "Event","icon": "bx bxs-calendar-heart" ,"page":"event.html"},
+    { "name": "Story","icon": "bx bxs-time" ,"page":"story.html"},
+    { "name": "Drescode","icon": "bx bxs-palette" ,"page":"drescode.html"},
+    { "name": "Location","icon": "bx bxs-map" ,"page":"location.html"},
+    { "name": "Gift","icon": "bx bxs-gift" ,"page":"gift.html"},
+    { "name": "RSVP","icon": "bx bxs-copy-alt" ,"page":"rsvp.html"},
     { "name": "Thanks","icon": "bx bxs-hand" ,"page":"thanks.html"}
 ],
   "story": [
@@ -32,14 +32,14 @@
 
 ],
 "gallery": [
-  "src/assets/photos/20241110-IMG_5096.jpg",
-  "src/assets/photos/20241110-IMG_5035.jpg",
-  "src/assets/photos/20241110-IMG_5114.jpg",
-  "src/assets/photos/20241110-IMG_5140.jpg",
-  "src/assets/photos/20241110-IMG_5166.jpg",
-  "src/assets/photos/20241110-IMG_5085-2.jpg",
-  "src/assets/photos/20241110-IMG_5100.jpg",
-  "src/assets/photos/20241110-IMG_5193.jpg"
+  {"img":"https://i.ibb.co.com/6FjZfJw/sr-1.jpg","width":"33.33%"},
+  {"img":"https://i.ibb.co.com/Fz7jSYH/sr-2.jpg","width":"33.33%"},
+  {"img":"https://i.ibb.co.com/dcx0d32/sr-3.jpg","width":"33.33%"},
+  {"img":"https://i.ibb.co.com/8BFFSxq/sr-4.jpg","width":"33.33%"},
+  {"img":"https://i.ibb.co.com/n1zKxkB/sr-5.jpg","width":"33.33%"},
+  {"img":"https://i.ibb.co.com/MCTSVNt/sr-6.jpg","width":"33.33%"},
+  {"img":"https://i.ibb.co.com/7grBrBj/sr-7.jpg","width":"33.33%"},
+  {"img":"https://i.ibb.co.com/P4ZtR9d/sr-8.jpg","width":"33.33%"}
 ],
 "event": [
   {
@@ -59,7 +59,8 @@
 ],
 "bride": [
   {
-    "photo": "src/assets/photos/20241110-IMG_5085-2.jpg",
+    "bg":"",
+    "photo": "https://i.ibb.co.com/Fz7jSYH/sr-1.jpg",
     "type": "MEMPELAI WANITA",
     "name": "SENY INDRIANI",
     "putraDari": "BAPAK. MIYANTO & IBU NELIS NURHAYATI",
@@ -68,7 +69,8 @@
 ],
 "groom": [
   {
-    "photo": "src/assets/photos/20241110-IMG_5085-2.jpg",
+    "bg":"",
+    "photo": "https://i.ibb.co.com/Fz7jSYH/sr-3.jpg",
     "type": "MEMPELAI PRIA",
     "name": "MOHAMAD RICKY",
     "putraDari": "BAPAK. DEDE & IBU IIS AISYAH",
@@ -77,6 +79,7 @@
 ],
 "location": [
   {
+    "bg":"",
     "name": "Villa Vita",
     "address": "Jl. Pagermaneuh No.50, Pagerwangi, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
     "maps_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1168.7471201985038!2d107.61971898888261!3d-6.838728932249548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e1000715a941%3A0x9bcbf42245e1046a!2sVilla%20Vita!5e0!3m2!1sen!2sid!4v1735189058385!5m2!1sen!2sid",
@@ -85,6 +88,7 @@
 ],
 "thanks": [
   {
+    "bg":"",
     "name": "Seny & Ricky",
     "description": "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami."
   }

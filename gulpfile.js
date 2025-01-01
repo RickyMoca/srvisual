@@ -1,89 +1,61 @@
+// Menggunakan require() untuk modul CommonJS lainnya
 const gulp = require('gulp');
-const cleanCSS = require('gulp-clean-css'); // Plugin untuk minify CSS
-const browserSync = require('browser-sync').create(); // Plugin untuk live-reloading browser
-const nunjucksRender = require('gulp-nunjucks-render'); // Plugin untuk render Nunjucks
-const data = require('gulp-data'); // Plugin untuk menambah data ke template
+const cleanCSS = require('gulp-clean-css');
+const browserSync = require('browser-sync').create();
+const nunjucksRender = require('gulp-nunjucks-render');
+const data = require('gulp-data');
 const fs = require('fs');
-const rename = require('gulp-rename'); // Plugin untuk merename file
+const rename = require('gulp-rename');
 
-// Definisikan path sumber dan tujuan
-const paths = {
-  src: {
-    css: 'public/src/assets/css/**/*.css', // Lokasi file CSS
-    pages: 'public/src/page/index.njk', // File halaman yang ingin di-render (Nunjucks)
-    json: 'public/src/data/data.json',  // Data JSON untuk Nunjucks
-    assets: 'public/src/assets/**/*' // Semua file asset (CSS, JS, Images, dll)
-  },
-  dest: 'public/dist', // Lokasi output
-};
 
-// Task untuk minify CSS dan mengubah nama file dengan .min sebelum ekstensi
-gulp.task('minify-css', function () {
-  console.log('Minifying CSS...');  // Log untuk memastikan task ini dijalankan
-  return gulp.src(paths.src.css) // Mengambil file CSS dari folder src/assets/css
-    .pipe(cleanCSS({ compatibility: 'ie8' })) // Meminify CSS
-    .pipe(rename(function (path) {
-      path.basename = path.basename + '.min'; // Menambahkan .min sebelum ekstensi .css
+
+// Task lainnya (CSS, Nunjucks, dll.)
+function minifyCSS() {
+  return gulp.src('public/src/assets/css/**/*.css')
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('public/dist/assets/css'))
+    .pipe(browserSync.stream());
+}
+
+function nunjucks() {
+  return gulp.src('public/src/page/index.njk')
+    .pipe(data(function () {
+      return JSON.parse(fs.readFileSync('public/src/data/data.json'));
     }))
-    .pipe(gulp.dest(paths.dest + '/assets/css')) // Menyimpan hasil ke folder dist/assets/css
-    .on('end', function() {
-      console.log('CSS minified and renamed with .min before extension, saved to dist/assets/css');
-    })
-    .on('error', function(err) {
-      console.error('Error during minification:', err);
-    });
-});
+    .pipe(nunjucksRender({ path: ['public/src/page'] }))
+    .pipe(gulp.dest('public/dist'))
+    .pipe(browserSync.stream());
+}
 
-// Task untuk memproses file Nunjucks
-gulp.task('nunjucks', function () {
-  return gulp
-    .src(paths.src.pages) // Mengambil file Nunjucks (index.njk)
-    .pipe(
-      data(function () {
-        try {
-          return JSON.parse(fs.readFileSync(paths.src.json)); // Membaca file data.json
-        } catch (err) {
-          console.error('Error parsing JSON:', err);
-          return {};
-        }
-      })
-    )
-    .pipe(
-      nunjucksRender({
-        path: ['public/src/page'], // Menyediakan path untuk template Nunjucks
-        options: {
-          autoescape: true, // Mengaktifkan autoescape untuk mencegah XSS
-        },
-      })
-    )
-    .pipe(gulp.dest(paths.dest)) // Menyimpan hasil render Nunjucks ke folder dist
-    .pipe(browserSync.stream()); // Reload browser setelah build selesai
-});
 
-// Task untuk memulai server Browser-Sync
-gulp.task('serve', function () {
+function copyAssets() {
+  return gulp.src([
+    'public/src/assets/img/**/*',    // Semua file dalam folder img dan subfoldernya
+    'public/src/assets/js/**/*',     // Semua file dalam folder js dan subfoldernya
+    'public/src/assets/musik.mp3',    // File musik mp3
+  ], { base: 'public/src/assets' })  // Menentukan base path yang digunakan saat menyalin
+  .pipe(gulp.dest('public/dist/assets'));  // Menyimpan ke public/dist/assets
+}
+
+function copyIcon() {
+  return gulp.src(['public/src/favicon.ico'])
+    .pipe(gulp.dest('public/dist'));
+}
+
+function serve() {
   browserSync.init({
     server: {
-      baseDir: './public/dist', // Lokasi folder yang akan dilayani
+      baseDir: './public/dist',
     },
   });
 
-  // Menonton perubahan file
-  gulp.watch(paths.src.pages, gulp.series('nunjucks')); // Watch file .njk
-  gulp.watch(paths.src.css, gulp.series('minify-css')); // Watch file CSS
-  gulp.watch(paths.src.assets, gulp.series('copy-assets')); // Watch asset lainnya
-  gulp.watch('public/dist/**/*.html').on('change', browserSync.reload); // Reload browser jika file HTML berubah
-  gulp.watch('public/dist/**/*.css').on('change', browserSync.reload); // Reload browser jika file CSS berubah
-});
+  gulp.watch('public/src/page/**/*.njk', nunjucks);
+  gulp.watch('public/src/assets/css/**/*.css', minifyCSS);
+  gulp.watch('public/src/assets/**/*', copyAssets);
+  gulp.watch('public/dist/**/*.html').on('change', browserSync.reload);
+  gulp.watch('public/dist/**/*.css').on('change', browserSync.reload);
+}
 
-// Task untuk menyalin asset (seperti font, JS, dll) ke folder dist
-gulp.task('copy-assets', function () {
-  return gulp.src([
-      paths.src.assets,
-      `!${paths.src.css}`,  // Mengecualikan file CSS
-    ]) // Menyalin semua file dalam src/assets kecuali CSS
-    .pipe(gulp.dest(paths.dest + '/assets')); // Menyimpan ke folder dist/assets
-});
-
-// Default task untuk menjalankan semua task secara bersamaan
-gulp.task('default', gulp.series('minify-css', 'nunjucks', 'copy-assets', 'serve'));
+// Menentukan task default
+exports.default = gulp.series(minifyCSS, nunjucks, copyAssets, copyIcon, serve);
