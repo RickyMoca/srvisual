@@ -1,0 +1,61 @@
+   <!-- startRSVPModal -->
+   <div class="modal fade" id="rsvpModal" tabindex="-1" role="dialog" aria-labelledby="rsvpModal">
+   
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4" style="height:100%">
+            <div class="text-center mb-4 animate__animated animate__fadeInDown animate__slower">
+                <div class="color-accent h4 mb-2 editable font-latin" style="font-size:46px;color:--inv-base;">RSVP</div>
+            </div>
+        <form onsubmit="submitForm(event)">
+            <!-- Name Field -->
+            <div class="form-group mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+            </div>
+
+            <!-- Message Field -->
+            <div class="form-group mb-3">
+                <label for="message" class="form-label">Berikan Ucapan</label>
+                <textarea id="message" name="message" class="form-control" rows="3" placeholder="Your message" required></textarea>
+            </div>
+
+            <!-- Attendance and Total in the same row -->
+            <div class="form-row mb-3">
+                <div class="col-md-6">
+                <div class="form-group">
+                    <label for="attendance" class="form-label">Attendance</label>
+                    <select id="attendance" name="attendance" class="form-control" required>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Tidak Hadir">Tidak Hadir</option>
+                    </select>
+                </div>
+                </div>
+
+                <div class="col-md-6">
+                <div class="form-group">
+                    <label for="total" class="form-label">Total Guest</label>
+                    <input type="number" id="total" name="total" class="form-control bg-light" placeholder="Total number" required>
+                </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </div>
+        </form>
+
+        <div id="ucapan" class="mt-2">
+            
+        </div>
+
+    <!-- rsvp form -->
+    <button onclick="if (!window.__cfRLUnblockHandlers) return false; closeModal(rsvpModal)" type="button" class="btn btn-close" data-cf-modified-0ec6dc73e469a5f35dc42581-="">
+        <svg xmlns="http://www.w3.org/2000/svg" height="42px" width="42px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"/>
+        </svg>
+    </button>
+            </div>
+        </div>
+</div>
+<!-- endRSVPModal -->

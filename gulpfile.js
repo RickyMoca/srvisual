@@ -50,9 +50,10 @@ function serve() {
     },
   });
 
-  gulp.watch('public/src/page/**/*.njk', nunjucks);
+  gulp.watch('public/src/page/**/*.njk|html', nunjucks);
   gulp.watch('public/src/assets/css/**/*.css', minifyCSS);
   gulp.watch('public/src/assets/**/*', copyAssets);
+  gulp.watch('public/src/**/*.css').on('change', browserSync.reload);
   gulp.watch('public/dist/**/*.html').on('change', browserSync.reload);
   gulp.watch('public/dist/**/*.css').on('change', browserSync.reload);
 }
