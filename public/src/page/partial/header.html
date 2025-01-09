@@ -22,10 +22,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="icon" href="/favicon.ico">
         <!-- css -->
-        <link rel="stylesheet" href="assets/css/animate.min.css">
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link href="assets/css/themesv2.min.css" rel="stylesheet">
-        <link href="assets/css/custom-style.min.css" rel="stylesheet">
-     
+        {% for css in css_path %}
+        <link rel="stylesheet" href="{{css}}">
+        {% endfor %}
     </head>

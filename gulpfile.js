@@ -1,62 +1,58 @@
-// Menggunakan require() untuk modul CommonJS lainnya
-const gulp = require('gulp');
-const cleanCSS = require('gulp-clean-css');
-const browserSync = require('browser-sync').create();
-const nunjucksRender = require('gulp-nunjucks-render');
-const data = require('gulp-data');
-const fs = require('fs');
-const rename = require('gulp-rename');
+const gulp = require('gulp'); // Memasukkan module gulp
+const cleanCSS = require('gulp-clean-css'); // Untuk meminifikasi file CSS
+const browserSync = require('browser-sync').create(); // Untuk browser live-reloading
+const nunjucksRender = require('gulp-nunjucks-render'); // Untuk merender file Nunjucks (.njk)
+const data = require('gulp-data'); // Untuk memuat data JSON
+const fs = require('fs'); // Untuk membaca file JSON
+const rename = require('gulp-rename'); // Untuk merename file, seperti menambahkan suffix
 
+// Variabel untuk folder sumber dan tujuan
+const src = 'public/src';  // Folder sumber
+const dist = 'public/dist'; // Folder tujuan
 
-
-// Task lainnya (CSS, Nunjucks, dll.)
+// Task untuk meminifikasi CSS
 function minifyCSS() {
-  return gulp.src('public/src/assets/css/**/*.css')
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('public/dist/assets/css'))
-    .pipe(browserSync.stream());
+  return gulp.src(`${src}/assets/css/**/*.css`) // Menentukan file CSS sumber
+    .pipe(cleanCSS({ compatibility: 'ie8' })) // Meminifikasi CSS dengan kompatibilitas IE8
+    .pipe(rename({ suffix: '.min' })) // Menambahkan suffix ".min" pada nama file output
+    .pipe(gulp.dest(`${dist}/assets/css`)) // Menyimpan file yang sudah dimodifikasi ke folder tujuan
+    .pipe(browserSync.stream()); // Menyebarkan perubahan ke browser untuk live reload
 }
 
+// Task untuk merender file Nunjucks (.njk) menjadi HTML
 function nunjucks() {
-  return gulp.src('public/src/page/index.njk')
-    .pipe(data(function () {
-      return JSON.parse(fs.readFileSync('public/src/data/data.json'));
-    }))
-    .pipe(nunjucksRender({ path: ['public/src/page'] }))
-    .pipe(gulp.dest('public/dist'))
-    .pipe(browserSync.stream());
+  return gulp.src(`${src}/page/*.njk`) // Menentukan file Nunjucks sumber
+    .pipe(data(() => JSON.parse(fs.readFileSync(`${src}/data/data.json`)))) // Memuat data dari JSON
+    .pipe(nunjucksRender({ path: [`${src}/page`] })) // Merender file Nunjucks dengan path ke template
+    .pipe(gulp.dest(dist)) // Menyimpan file HTML hasil render ke folder tujuan
+    .pipe(browserSync.stream()); // Menyebarkan perubahan ke browser untuk live reload
 }
 
-
+// Task untuk menyalin file gambar dan JavaScript ke folder tujuan
 function copyAssets() {
-  return gulp.src([
-    'public/src/assets/img/**/*',    // Semua file dalam folder img dan subfoldernya
-    'public/src/assets/js/**/*',     // Semua file dalam folder js dan subfoldernya
-    'public/src/assets/musik.mp3',    // File musik mp3
-  ], { base: 'public/src/assets' })  // Menentukan base path yang digunakan saat menyalin
-  .pipe(gulp.dest('public/dist/assets'));  // Menyimpan ke public/dist/assets
+  return gulp.src([`${src}/assets/img/**/*`, `${src}/assets/js/**/*`], { base: `${src}/assets` }) // Menyalin semua gambar dan JS
+    .pipe(gulp.dest(`${dist}/assets`)); // Menyimpan file yang disalin ke folder tujuan
 }
 
+// Task untuk menyalin file favicon ke folder tujuan
 function copyIcon() {
-  return gulp.src(['public/src/favicon.ico'])
-    .pipe(gulp.dest('public/dist'));
+  return gulp.src(`${src}/favicon.ico`) // Menentukan file favicon sumber
+    .pipe(gulp.dest(dist)); // Menyimpan favicon ke folder tujuan
 }
 
+// Task untuk menginisialisasi browserSync dan memantau file untuk perubahan
 function serve() {
   browserSync.init({
-    server: {
-      baseDir: './public/dist',
-    },
+    server: { baseDir: dist }, // Menggunakan folder 'dist' sebagai root server
   });
 
-  gulp.watch('public/src/page/**/*.njk|html', nunjucks);
-  gulp.watch('public/src/assets/css/**/*.css', minifyCSS);
-  gulp.watch('public/src/assets/**/*', copyAssets);
-  gulp.watch('public/src/**/*.css').on('change', browserSync.reload);
-  gulp.watch('public/dist/**/*.html').on('change', browserSync.reload);
-  gulp.watch('public/dist/**/*.css').on('change', browserSync.reload);
+  // Memantau file .njk dan .html untuk merender ulang saat ada perubahan
+  gulp.watch(`${src}/page/**/*.njk`, nunjucks); 
+  gulp.watch(`${src}/page/**/*.html`, nunjucks); 
+  gulp.watch(`${src}/assets/css/**/*.css`, minifyCSS); // Memantau file CSS untuk minifikasi ulang
+  gulp.watch([`${src}/assets/img/**/*`, `${src}/assets/js/**/*`], copyAssets); // Memantau gambar dan JS untuk penyalinan ulang
+  gulp.watch(`${dist}/**/*`).on('change', browserSync.reload); // Memantau semua file di folder dist untuk reload browser
 }
 
-// Menentukan task default
+// Task Default yang menjalankan semua task yang telah didefinisikan
 exports.default = gulp.series(minifyCSS, nunjucks, copyAssets, copyIcon, serve);

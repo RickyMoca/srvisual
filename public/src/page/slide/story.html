@@ -1,14 +1,14 @@
 <li class="satumomen_slide">
-    <div class="container-mobile " style="background-image: url(assets/img/img-bg/bg-primary.webp); ;">
+    <div class="container-mobile " style="background-image: url('{{story.bg}}'); ;">
         <div style="position:absolute;inset:0;z-index:0;background-size:100% 100%;"></div>
-        <div class="position-relative h-100 d-flex flex-column justify-content-center" style="z-index:1;">
-            <div class="mt-5 editable text-center color-accent h4 mb-3 animate__animated animate__fadeInDown animate__slower font-latin" style="font-size:42px;color:--inv-base;">Event Rundown</div>
-                {% for item in story %}
-                <div class="text-left pl-3 mb-3 animate__animated animate__fadeInUp animate__slower" style="position:relative;">
-                    <span style="height:16px;width:16px;position:absolute;background-color:var(--inv-border);border-radius:100%;transform:translateX(-24px) translateY(4px);"></span>
-                    <span style="height:100%;width:2px;position:absolute;background-color:var(--inv-border);transform:translateX(-17px) translateY(20px);"></span>
-                    <div class="editable font-weight-bold mb-2" style="font-size:12px;">{{item.time}} | {{item.title}}</div>
-                    <div class="editable quotes" style="font-size:12px;">{{item.description}}</div>
+        <div class="position-relative d-flex flex-column justify-content-center" style="z-index:1;">
+            <div class="title text-center color-accent animate__animated animate__fadeInDown animate__slower font-latin" style="color:--inv-base;">{{story.title}}</div>
+                {% for item in story.timline %}
+                <div class="text-left mb-3 animate__animated animate__fadeInUp animate__slower" style="position:relative;">
+                <i style="transform:translateX(-4px) translateY(-2px);" class='bx bxs-heart-circle'></i>
+                <span style="height:100%;width:2px;position:absolute;background-color:var(--inv-border);transform:translateX(-17px) translateY(20px);"></span>
+                    <div class="editable font-weight-bold ml-4" style="font-size:12px; margin-top: -30px;">{{item.time}} | {{item.title}}</div>
+                    <div class="editable quotes ml-4" style="font-size:12px;">{{item.description}}</div>
                 </div>
                {% endfor %}
 

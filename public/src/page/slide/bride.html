@@ -1,7 +1,7 @@
-{% for item in bride %}
 <li class="satumomen_slide" id="bride">
-    <div class="container-mobile">
-                <div class="editable text-left animate__animated animate__fadeInDown animate__slower mb-3 font-latin" style="font-size:40px;line-height:1;">Wedding Profile</div>
+    <div class="container-mobile" style="background-image:url('{{ mempelai.bg }}')">
+        <div class="editable text-left animate__animated animate__fadeInDown animate__slower mb-5 font-latin" style="font-size:40px;line-height:1;">Wedding Profile</div>
+        {% for item in mempelai.bride %}
                 <div class="d-flex flex-row justify-content-start align-items-end mb-5" style="gap:24px;">
                     <div style="height:190px;width:130px;min-width:130px;overflow:hidden;" class="image-editable animate__animated animate__fadeInDown animate__slower">
                         <img class="img-bride-groom" src="{{ item.photo }}" alt="{{ item.photo }}"/>
@@ -27,14 +27,14 @@
                         <div class="editable" style="font-size:14.4px;">{{ item.name }}</div>
                     </div>
                     <div class="text-left animate__animated animate__fadeInUp animate__slower mb-2">
-                        <div class="editable color-accent" style="font-size:14.4px;">PUTRI DARI</div>
+                        <div class="editable color-accent" style="font-size:14.4px;">{{ item.gender }} DARI</div>
                         <div class="editable" style="font-size:14.4px;">{{ item.putraDari }}</div>
                     </div>
                     <div class="text-left animate__animated animate__fadeInUp animate__slower">
                         <div class="editable color-accent" style="font-size:14.4px;">DESCRIPTION</div>
-                        <div class="editable" style="font-size:14.4px;">@{{ item.description  }}</div>
+                        <div class="editable" style="font-size:14.4px;">{{ item.description  }}</div>
                     </div>
-                </div>
-            </div>
-        </li>
-{% endfor %}
+        {% endfor %}
+        </div>
+    </div>
+</li>

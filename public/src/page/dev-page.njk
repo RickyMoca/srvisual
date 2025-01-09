@@ -11,7 +11,7 @@
         </div>
         <!-- music -->
         <audio id="music" loop autoplay>
-            <source src="{{music}}">
+            <source src="">
         </audio>
         <!-- end music -->
         <div id="workspace-container" class="position-fixed h-100 w-100" style="overflow: hidden">
@@ -22,9 +22,7 @@
                         <div id="satuMomen" data-guest="" data-group="VIP">
                             <div class="satumomen_track">
                                 <ul class="satumomen_list">
-                                 {% for item in menu %}
-                                    {% include "slide/"+item.page %}
-                                 {% endfor %}
+                                    {% include "slide/story.html" %}
                                 </ul>
                             </div>
                         </div>

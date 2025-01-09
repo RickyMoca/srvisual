@@ -1,12 +1,11 @@
 <li class="satumomen_slide" id="event">
     <div class="container-mobile">
-        <div style="background-image:url(assets/img/img-bg/bg-primary.webp);position:absolute;inset:0;z-index:0;background-size:cover;"></div>
+        <div style="background-image:url('{{event.bg}}');position:absolute;inset:0;z-index:0;background-size:cover;"></div>
         <div class="position-relative h-70 d-flex justify-content-center align-items-center" style="z-index:1;">
             <div style="width:100%;">
-                <div class="editable text-center color-accent h4 mb-2 font-latin" style="font-size:46px;color:rgb(95, 119, 93);">See you there!</div>
-                {% for item in event %}
-                <div class="text-center mb-4 animate__animated animate__fadeInLeft animate__slower">
-                    <div class="editable" style="font-size:17px;">{{ item.name}}</div>
+                {% for item in event.detail %}
+                <div class="text-center mb-4  mt-4 animate__animated animate__fadeInLeft animate__slower">
+                    <div class="editable font-latin" style="font-size:45px;">{{ item.name}}</div>
                     <div class="editable" style="font-size:13px;">{{ item.date}}</div>
                     <div class="editable" style="font-size:15px;">{{ item.time}}</div>
                     <div class="editable" style="font-size:13px;">{{ item.location}}</div>
@@ -14,31 +13,32 @@
                 </div>
                 {% endfor %}
                
-                <div class="countdown-wrapper d-flex flex-column animate__animated animate__fadeInUp animate__slower" data-datetime="{{ countdown }}">
-                    <div class="countdown text-center">
+                <div class="countdown-wrapper d-flex flex-column" data-datetime="{{ countdown }}">
+                    <div class="countdown text-center animate__animated animate__fadeInLeft animate__slower">
                         <div class="countdown-item day">
                             <div class="number">00</div>
-                            <div class="text editable" style="font-size:10px;">Hari</div>
+                            <div class="text font-latin">Hari</div>
                         </div>
                         <div class="countdown-item hour">
                             <div class="number">00</div>
-                            <div class="text editable" style="font-size:10px;">Jam</div>
+                            <div class="text font-latin">Jam</div>
                         </div>
+                    </div>
+                    <div class="countdown text-center mt-2 animate__animated animate__fadeInRight animate__slower">
                         <div class="countdown-item minute">
                             <div class="number">00</div>
-                            <div class="text editable" style="font-size:10px;">Menit.</div>
+                            <div class="text font-latin">Menit.</div>
                         </div>
                         <div class="countdown-item second">
                             <div class="number">00</div>
-                            <div class="text editable" style="font-size:10px;">Detik.</div>
+                            <div class="text font-latin">Detik.</div>
                         </div>
                     </div>
-                    <button class="btn-countdown btn btn-sm btn-pilled btn-accent mt-2">Atur Countdown</button>
                 </div>
-                <div class="text-center">
-                    <a href="https://calendar.google.com/calendar/u/0/r/eventedit?text=&amp;dates=&amp;details=&amp;location=" target="_blank" class="btn-reminder btn btn-primary rounded-pill my-3 animate__animated animate__fadeInUp animate__slow" rel="noreferrer noopener">Add to Calendar</a>
+                <div class="text-center animate__animated animate__fadeInUp animate__slower">
+                    <a href="https://calendar.google.com/calendar/u/0/r/eventedit?text=&amp;dates=&amp;details=&amp;location=" target="_blank" class="btn-reminder btn btn-primary rounded-pill my-3" rel="noreferrer noopener">Add to Calendar</a>
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
 </li>

@@ -1,8 +1,11 @@
- <!-- not support modal -->
         <!-- start script -->
-        <script src="assets/js/theme-app.js" type="0ec6dc73e469a5f35dc42581-text/javascript"></script>
-        <script src="assets/js/themesv2.js" type="0ec6dc73e469a5f35dc42581-text/javascript"></script>
-        <script src="assets/js/custom.js" type="0ec6dc73e469a5f35dc42581-text/javascript"></script>
+        {% for pathjs in js_path %}
+        <script src="{{pathjs.js}}"></script>
+        {% endfor %}
+
+
+ <!-- not support modal -->
+
         <script type="0ec6dc73e469a5f35dc42581-text/javascript">
             
         var notSupport = document.getElementById('notSupport');
@@ -17,7 +20,7 @@
         checkBrowser()
     
         </script>
+        <script src="assets/js/rocket-loader.min.js"  data-cf-settings="0ec6dc73e469a5f35dc42581-|49" defer></script>
         <!-- end script -->
-        <script src="assets/js/rocket-loader.min.js" data-cf-settings="0ec6dc73e469a5f35dc42581-|49" defer></script>
     </body>
 </html>
