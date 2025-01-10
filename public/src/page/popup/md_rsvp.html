@@ -6,44 +6,54 @@
             <div class="text-center mb-4 animate__animated animate__fadeInDown animate__slower">
                 <div class="color-accent h4 mb-2 editable font-latin" style="font-size:46px;color:--inv-base;">RSVP</div>
             </div>
-        <form onsubmit="submitForm(event)">
-            <!-- Name Field -->
-            <div class="form-group mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
-            </div>
 
-            <!-- Message Field -->
-            <div class="form-group mb-3">
-                <label for="message" class="form-label">Berikan Ucapan</label>
-                <textarea id="message" name="message" class="form-control" rows="3" placeholder="Your message" required></textarea>
-            </div>
-
-            <!-- Attendance and Total in the same row -->
-            <div class="form-row mb-3">
-                <div class="col-md-6">
-                <div class="form-group">
-                    <label for="attendance" class="form-label">Attendance</label>
-                    <select id="attendance" name="attendance" class="form-control" required>
-                    <option value="Hadir">Hadir</option>
-                    <option value="Tidak Hadir">Tidak Hadir</option>
-                    </select>
+            <form onsubmit="submitForm(event)" class="formContainer p-2 mb-2 rounded-lg shadow-lg">
+                <!-- Name Field -->
+                <div class="form-group mb-2">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-control input-field" placeholder="Your name" required>
                 </div>
+            
+                <!-- Message Field -->
+                <div class="form-group mb-2">
+                    <label for="message">Berikan Ucapan</label>
+                    <textarea id="message" name="message" class="form-control input-field" rows="4" placeholder="Your message" required></textarea>
                 </div>
-
-                <div class="col-md-6">
-                <div class="form-group">
-                    <label for="total" class="form-label">Total Guest</label>
-                    <input type="number" id="total" name="total" class="form-control bg-light" placeholder="Total number" required>
+            
+                <!-- Attendance and Total in the same row -->
+                <div class="form-row mb-2">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="attendance">Attendance</label>
+                            <select id="attendance" name="attendance" class="form-control input-field" required>
+                                <option value="Hadir">Hadir</option>
+                                <option value="Tidak Hadir">Tidak Hadir</option>
+                            </select>
+                        </div>
+                    </div>
+            
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="total">Total Guest</label>
+                            <select id="total" name="total" class="form-control input-field" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <input type="hidden" id="hiddenTotal" name="total">
+                        </div>
+                    </div>
                 </div>
+            
+                <!-- Submit Button -->
+                <div class="d-grid mb-3">
+                    <button type="submit" class="btnSubmit btn btn-block">Submit</button>
                 </div>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="d-grid mb-3">
-                <button type="submit" class="btn btn-primary btn-block">Submit</button>
-            </div>
-        </form>
+            </form>
+            
+            
 
         <div id="ucapan" class="mt-2">
             

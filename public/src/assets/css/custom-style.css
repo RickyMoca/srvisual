@@ -9,7 +9,7 @@
     --inv-bg: #ffffff;
     --inv-base: #000000;
     --inv-accent: #515F6B;
-    --inv-border: #515F6B;
+    --inv-border: #97a2ab;
     --font-base: "Poppins", serif;
     --font-accent: "Bebas Neue", cursive;
     --font-latin: "Hurricane", serif;
@@ -56,3 +56,97 @@
     font-size: 50px;
     margin-bottom: 10px;
 }
+
+.card {
+    
+    border: none;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-radius: 4px;
+}
+
+
+
+.nameo{
+    font-size: 15px;
+}
+.badge{
+
+    padding: 7px;
+    padding-right: 9px;
+    padding-left: 16px;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+}
+
+.icons i{
+
+    margin-left: 8px;
+}
+.reply{
+
+    margin-left: 12px;
+}
+
+.reply small{
+
+    color: #b7b4b4;
+
+}
+
+.konfrim{
+    font-size: 15px;
+}
+
+.msg{
+    font-size: 12.5px;
+    font-style: italic;
+}
+
+/* Form styling */
+
+.formContainer{
+    background-color: var(--inv-base);
+    border-radius: 0.8rem;
+}
+.form-group label {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-family: var(--font-latin);
+}
+
+/* Input fields styling */
+.input-field {
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    background-color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Focus effect */
+.input-field:focus {
+    border-color: #28292b;
+    box-shadow: 0 0 5px rgba(32, 47, 62, 0.5);
+}
+
+.btnSubmit{
+    background-color: var(--inv-accent);
+    color: var(--btn-color);
+}
+
+/* Pastikan spinner berputar dengan animasi */
+.spinner-border {
+    animation: spin 1s linear infinite;  /* Animasi berputar */
+}
+
+/* Definisikan animasi spin */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);  /* Mulai dari sudut 0 */
+    }
+    100% {
+        transform: rotate(360deg); /* Putar 360 derajat */
+    }
+}
+
+

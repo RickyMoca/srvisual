@@ -26,12 +26,12 @@
     { "name": "Opening","icon": "bx bxs-quote-alt-left" ,"page":"opening.html"},
     { "name": "Bride","icon": "bx bxs-heart-circle" ,"page":"bride.html"},
     { "name": "Groom","icon": "bx bxs-heart-square" ,"page":"groom.html"},
-    { "name": "Gallery","icon": "bx bxs-image" ,"page":"gallery.html"},
     { "name": "Story","icon": "bx bxs-time" ,"page":"story.html"},
     { "name": "Event","icon": "bx bxs-calendar-heart" ,"page":"event.html"},
     { "name": "Live","icon": "bx bx-broadcast" ,"page":"live.html"},
     { "name": "Location","icon": "bx bxs-map" ,"page":"location.html"},
     { "name": "RSVP","icon": "bx bxs-copy-alt" ,"page":"rsvp.html"},
+    { "name": "Gallery","icon": "bx bxs-image" ,"page":"gallery.html"},
     { "name": "Thanks","icon": "bx bxs-hand" ,"page":"thanks.html"}
 ],
 "cover": [

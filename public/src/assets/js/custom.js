@@ -3,7 +3,20 @@ const url = "https://script.google.com/macros/s/AKfycbwiQ6HHR6gox7kQY92rdFWR53xI
 async function submitForm(event) {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
+    const form = event.target;
+    const submitButton = form.querySelector('[type="submit"]');
+    const totalSelect = document.getElementById('total');
+    const formData = new FormData(form);
+
+    // Menampilkan data input di console
+    console.log("Data yang akan dikirim:");
+    for (const [key, value] of formData.entries()) {
+        console.log(`${key}: ${value}`);
+    }
+
+    // Nonaktifkan tombol submit
+    submitButton.disabled = true;
+    submitButton.innerText = "Mengirim...";
 
     try {
         const response = await fetch(url, {
@@ -16,17 +29,47 @@ async function submitForm(event) {
         console.log("Data sedang dikirim"); // Debug respons setelah parsing
 
         if (result === "Data added successfully") {
-            alert("Data berhasil dikirim!");
-            event.target.reset();
             getData(); // Memanggil getData() untuk memperbarui data setelah berhasil submit
+            form.reset();
+            totalSelect.disabled = false;
+            alert("Data berhasil dikirim!");
         } else {
             alert("Gagal mengirim data: " + result.data);
         }
     } catch (error) {
         console.error("Error:", error); // Debug error
         alert("Error: " + error.message);
+    } finally {
+        // Aktifkan kembali tombol submit
+        submitButton.disabled = false;
+        submitButton.innerText = "Submit";
     }
 }
+
+document.getElementById('attendance').addEventListener('change', function () {
+    const attendanceValue = this.value;
+    const totalSelect = document.getElementById('total');
+    const hiddenTotal = document.getElementById('hiddenTotal');
+
+    if (attendanceValue === 'Hadir') {
+        totalSelect.value = '1'; // Set default value ke 1
+        totalSelect.disabled = false; // Aktifkan kembali dropdown
+        hiddenTotal.value = totalSelect.value; // Set nilai input tersembunyi
+    } else if (attendanceValue === 'Tidak Hadir') {
+        totalSelect.value = '0'; // Set value ke 0
+        totalSelect.disabled = true; // Nonaktifkan dropdown
+        hiddenTotal.value = '0'; // Set nilai input tersembunyi ke 0
+    }
+});
+
+// Perbarui nilai input tersembunyi saat dropdown diubah
+document.getElementById('total').addEventListener('change', function () {
+    var hiddenTotal = document.getElementById('hiddenTotal');
+    hiddenTotal.value = this.value;
+});
+
+
+
 
 async function getData() {  
     try {
@@ -60,17 +103,27 @@ function displayData(data) {
         const formattedDate = dateObj.toLocaleString('id-ID', { 
              year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit'
         });
+        const name = toTitleCase(item.Name);
 
         // Menggunakan template literal untuk menyusun HTML secara langsung
         const ucapanHTML = `
-        <div class="card">
-            <div class="card-body">
-                <div class="card-title font-weight-bold">`+toTitleCase(`${item.Name}`)+` <span class="badge ${item.Attendance === 'Hadir' ? 'badge-success' : 'badge-danger'}" style="font-size: 0.6rem;">${item.Attendance}</span></div>
-                <p class="card-text">${item.Message}</p>
-                <div class="card-subtitle text-muted font-weight-light"> 
-                    <i class='bx bx-time' style="font-size: 0.6rem;"></i> 
-                    <span style="font-size: 0.7rem;">${formattedDate}</span><br>
+
+        <div class="card p-2 mt-2">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="user d-flex flex-row">
+                    <img src="https://admirenabanza.com/wp-content/uploads/2024/09/Untitled-3-02.png" width="30" height="30" class="user-img rounded-circle mt-2 mr-2">
+                    <span>
+                    <small class="font-weight-bold nameo"><i class='konfrim bx ${item.Attendance === 'Hadir' ? 'bxs-badge-check text-success' : 'bxs-x-circle text-danger'}'></i>  ${name}</small> 
+                    <br><div class="msg">"${item.Message}"</div>
+                    </span>
                 </div>
+            </div>
+
+            <div class="action d-flex justify-content-between mt-2 align-items-center">
+                <div class="reply px-4">
+                      <small><i class='bx bx-time' style="font-size:12px;"></i> ${formattedDate}</small>
+                </div>
+
             </div>
         </div>
         `;
@@ -123,5 +176,4 @@ function toTitleCase(str) {
         document.getElementById('guestNameSlot').textContent = toTitleCase(guestName);
     }
 
-//   getData();
-
+  getData();
