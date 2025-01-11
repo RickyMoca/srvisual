@@ -17,6 +17,7 @@ async function submitForm(event) {
     // Nonaktifkan tombol submit
     submitButton.disabled = true;
     submitButton.innerText = "Mengirim...";
+    submitButton.classList.toggle("animate__pulse");
 
     try {
         const response = await fetch(url, {
@@ -43,6 +44,7 @@ async function submitForm(event) {
         // Aktifkan kembali tombol submit
         submitButton.disabled = false;
         submitButton.innerText = "Submit";
+        submitButton.classList.toggle("animate__pulse");
     }
 }
 
@@ -176,4 +178,4 @@ function toTitleCase(str) {
         document.getElementById('guestNameSlot').textContent = toTitleCase(guestName);
     }
 
-  getData();
+//   getData();

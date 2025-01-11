@@ -1,0 +1,53 @@
+<li class="satumomen_slide" id="couple">
+    <div class="container-mobile">
+        <div  style="background-image:url('{{ mempelai.bg }}');position:absolute;inset:0;z-index:0;background-size:cover;"></div>
+        
+        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+            <div class="text-center" style="width: 100%;">
+                <div class="title font-latin text-center color-accent animate__animated animate__fadeInDown animate__slower">{{mempelai.title}}</div>
+                {% for item in mempelai.bride %}
+                <div class="d-flex flex-row justify-content-start align-items-end mb-5" style="gap:24px;">
+                    <div style="height:190px;width:130px;min-width:130px;overflow:hidden;" class="image-editable animate__animated animate__fadeInDown animate__slower">
+                        <img class="img-bride-groom" src="{{ item.photo }}" alt="{{ item.photo }}"/>
+                    </div>
+                    <div class="kotak-satu">
+                        <div class="text-left animate__animated animate__fadeInUp animate__slower mb-2">
+                            <div class="editable color-accent" style="font-size:14.4px;">NAMA</div>
+                            <div class="editable" style="font-size:14.4px;">{{ item.name }}</div>
+                        </div>
+                        <div class="text-left animate__animated animate__fadeInUp animate__slower mb-2">
+                            <div class="editable color-accent" style="font-size:14.4px;">{{ item.gender }} DARI</div>
+                            <div class="editable" style="font-size:14.4px;">{{ item.putraDari }}</div>
+                        </div>
+                        <div class="text-left animate__animated animate__fadeInUp animate__slower">
+                            <div class="editable color-accent" style="font-size:14.4px;">DESCRIPTION</div>
+                            <div class="editable" style="font-size:14.4px;">{{ item.description  }}</div>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+        <div class="hr mb-5"></div>
+        {% for item in mempelai.groom %}
+                <div class="d-flex flex-row justify-content-start align-items-end mb-5" style="gap:24px;">
+                        <div style="height:190px;width:130px;min-width:130px;overflow:hidden;" class="image-editable animate__animated animate__fadeInUp animate__slower">
+                        <img class="img-bride-groom" src="{{ item.photo }}" alt="{{ item.photo }}"/>
+                    </div>
+                    <div class="kotak-satu">
+                        <div class="text-left animate__animated animate__fadeInUp animate__slower mb-2">
+                            <div class="editable color-accent" style="font-size:14.4px;">NAMA</div>
+                            <div class="editable" style="font-size:14.4px;">{{ item.name }}</div>
+                        </div>
+                        <div class="text-left animate__animated animate__fadeInUp animate__slower mb-2">
+                            <div class="editable color-accent" style="font-size:14.4px;">{{ item.gender }} DARI</div>
+                            <div class="editable" style="font-size:14.4px;">{{ item.putraDari }}</div>
+                        </div>
+                        <div class="text-left animate__animated animate__fadeInUp animate__slower">
+                            <div class="editable color-accent" style="font-size:14.4px;">DESCRIPTION</div>
+                            <div class="editable" style="font-size:14.4px;">{{ item.description  }}</div>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+        </div>
+    </div>
+</li>

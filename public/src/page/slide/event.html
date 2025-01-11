@@ -1,18 +1,12 @@
 <li class="satumomen_slide" id="event">
     <div class="container-mobile">
-        <div style="background-image:url('{{event.bg}}');position:absolute;inset:0;z-index:0;background-size:cover;"></div>
-        <div class="position-relative h-70 d-flex justify-content-center align-items-center" style="z-index:1;">
+        <div style="background-image:url('{{ event.bg }}');position:absolute;inset:0;z-index:0;background-size:cover;"> </div>
+        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
             <div style="width:100%;">
-                {% for item in event.detail %}
-                <div class="text-center mb-4  mt-4 animate__animated animate__fadeInLeft animate__slower">
-                    <div class="editable font-latin" style="font-size:45px;">{{ item.name}}</div>
-                    <div class="editable" style="font-size:13px;">{{ item.date}}</div>
-                    <div class="editable" style="font-size:15px;">{{ item.time}}</div>
-                    <div class="editable" style="font-size:13px;">{{ item.location}}</div>
-                    <div class="editable" style="font-size:13px;">{{ item.description}}</div>
+                <div class="text-center mb-4 animate__animated animate__fadeInDown animate__slower">
+                    <div class="color-accent h4 mb-2 editable font-latin" style="font-size:46px;color:--inv-base;">Our Bigday</div>
                 </div>
-                {% endfor %}
-               
+
                 <div class="countdown-wrapper d-flex flex-column" data-datetime="{{ countdown }}">
                     <div class="countdown text-center animate__animated animate__fadeInLeft animate__slower">
                         <div class="countdown-item day">
@@ -23,8 +17,6 @@
                             <div class="number">00</div>
                             <div class="text font-latin">Jam</div>
                         </div>
-                    </div>
-                    <div class="countdown text-center mt-2 animate__animated animate__fadeInRight animate__slower">
                         <div class="countdown-item minute">
                             <div class="number">00</div>
                             <div class="text font-latin">Menit.</div>
@@ -35,9 +27,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-center animate__animated animate__fadeInUp animate__slower">
-                    <a href="https://calendar.google.com/calendar/u/0/r/eventedit?text=&amp;dates=&amp;details=&amp;location=" target="_blank" class="btn-reminder btn btn-primary rounded-pill my-3" rel="noreferrer noopener">Add to Calendar</a>
+                {% for item in event.detail %}
+                <div class="mb-4  mt-4 animate__animated {{ item.animate}} animate__slower">
+                <div class="text-center row d-flex justify-content-center">
+                    <div class="card ticket-date inv-base p-4" style="width:90px;">
+                        <div>{{ item.date}}</div>
+                    </div>
+                    <div class="ticket-body text-left card p-4" style="width: 50%;">
+                        <div class="font-latin" style="font-size:30px;">{{ item.name}}</div>
+                        <div  style="font-size:12px;">{{ item.time}}</div>
+                        <div  style="font-size:12px;">{{ item.location}}</div>
+                        <div  style="font-size:12px;">{{ item.description}}</div>
+                    </div>
+                    </div>
                 </div>
+                {% endfor %}
+            
             </div> 
         </div>
     </div>

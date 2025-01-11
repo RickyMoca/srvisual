@@ -38,10 +38,6 @@
     font-size: 25px;
 }
 
-.kotak-dua{
-    margin-top: 50px;
-}
-
 .countdown-wrapper{
     font-size: 10px;
     margin-right: 40px;
@@ -149,4 +145,68 @@
     }
 }
 
+.hr {
+    width: 300%; /* Memastikan lebar sesuai viewport */
+    margin: 0; /* Menghilangkan margin default */
+    position: relative; /* Memastikan posisinya tetap dalam konteks layout */
+    left: 50%; /* Geser ke kiri */
+    transform: translateX(-50%); /* Pusatkan garis di tengah viewport */
+    border: none; /* Opsional: Hapus border default */
+    border-top: 3px solid var(--inv-accent); /* Atur gaya garis */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Tambahkan shadow */
+}
 
+.img-bride-groom{
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.676); /* Tambahkan shadow */
+}
+
+
+.card-quote {
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 8px 32px 0 rgba(254, 254, 254, 0.662);
+    backdrop-filter: blur(49px); /* lebih blur */
+    -webkit-backdrop-filter: blur(49px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .subtitle-quote {
+    font-size: 0.9rem;
+  }
+  
+  .polaroid {
+    position: relative;
+  }
+   
+  .polaroid img {
+    border: 10px solid #fff;
+    border-bottom: 45px solid #fff;
+    -webkit-box-shadow: 3px 3px 3px #777;
+       -moz-box-shadow: 3px 3px 3px #777;
+            box-shadow: 3px 3px 3px #777;
+  }
+   
+  .polaroid p {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 0px;
+    color: #888;
+  }
+
+  /* Ticket */
+  
+  
+  .ticket-date{
+    border-radius: 10 0px 0px 10;
+    background-color: var(--inv-accent);
+    font-weight: bold;
+    color: var(--btn-color);
+  }
+  .ticket-body {
+    border-radius: 0 10px 10px 0;
+    border-left: 2px #515F6B dashed;
+    
+}

@@ -269,7 +269,7 @@ body {
 
 .btn-lightbox {
     align-items: center;
-    background-color: rgba(255,0,0,.281);
+    background-color: rgba(0, 0, 0, 0.281);
     border-radius: 100%;
     bottom: 60px;
     color: #fff;
@@ -283,7 +283,7 @@ body {
 }
 
 .btn-lightbox:hover {
-    background-color: rgba(255,0,0,.534);
+    background-color: rgba(99, 96, 96, 0.534);
     color: #fff
 }
 

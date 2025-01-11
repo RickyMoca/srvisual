@@ -1,11 +1,25 @@
 <li class="satumomen_slide">
-    <div class="container-mobile " style="background-image: url('{{thanks.bg}}')">
-        <div style="position:absolute;inset:0;z-index:0;background-size:100% 100%;"></div>
+    <div class="container-mobile" style="background-image: url('{{thanks.bg}}'); position: relative; background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <!-- Overlay jika diperlukan -->
+        <div style="position: absolute; inset: 0; z-index: 0;"></div>
+        
+        <!-- Konten Utama -->
         <div class="h-100 position-relative watermark d-flex justify-content-center align-items-center">
             <div class="text-center w-100">
-                <div class="editable quotes mb-3 animate__animated animate__fadeInDown animate__slower" style="font-size:14px;">{{thanks.description}}</div>
-                <div class="editable font-italic animate__animated animate__fadeInDown animate__slow" style="font-size:14.4px;">Kami Yang Berbahagia,</div>
-                <div class="editable title color-accent animate__animated animate__fadeInDown animate__slow font-latin">{{thanks.name}}</div>
+                <!-- Deskripsi -->
+                <div class="editable quotes mb-3 animate__animated animate__fadeInDown animate__slower" style="font-size: 14px;">
+                    {{thanks.description}}
+                </div>
+
+                <!-- Pesan -->
+                <div class="editable font-italic animate__animated animate__fadeInDown animate__slow" style="font-size: 14.4px;">
+                    Kami Yang Berbahagia,
+                </div>
+
+                <!-- Nama -->
+                <div class="editable title color-accent animate__animated animate__fadeInDown animate__slow font-latin" style="font-size: 35px;">
+                    {{thanks.name}}
+                </div>
             </div>
         </div>
     </div>

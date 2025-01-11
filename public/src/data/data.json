@@ -1,7 +1,7 @@
 {
   "page_title": "Wedding Passport - Seny & Ricky",        
   "page_author": "Mohamad Ricky",
-  "music": "https://assets.satumomen.com/musics/brisia-jodie-fabio-asher-aku-memilihmu-official-music-video-ya2fo8taav4-00-00-10-00-03-54-part.mp3",
+  "musico": "https://assets.satumomen.com/musics/brisia-jodie-fabio-asher-aku-memilihmu-official-music-video-ya2fo8taav4-00-00-10-00-03-54-part.mp3",
   "countdown" : "2025-02-02T08:00",
   "base_url": {
     "css" : "assets/css/",
@@ -24,8 +24,7 @@
   "menu": [
     { "name": "Cover","icon": "bx bxs-envelope-open","page":"cover.html"},
     { "name": "Opening","icon": "bx bxs-quote-alt-left" ,"page":"opening.html"},
-    { "name": "Bride","icon": "bx bxs-heart-circle" ,"page":"bride.html"},
-    { "name": "Groom","icon": "bx bxs-heart-square" ,"page":"groom.html"},
+    { "name": "Couple","icon": "bx bxs-heart-circle" ,"page":"couple.html"},
     { "name": "Story","icon": "bx bxs-time" ,"page":"story.html"},
     { "name": "Event","icon": "bx bxs-calendar-heart" ,"page":"event.html"},
     { "name": "Live","icon": "bx bx-broadcast" ,"page":"live.html"},
@@ -54,7 +53,8 @@
   }
 ],
 "mempelai": {
-    "bg":"assets/img/img-bg/bg-primary.webp",
+    "bg":"assets/img/img-bg/bg-plain.webp",
+    "title":"The Couple",
     "bride": [
       {
         "bg": "",
@@ -97,8 +97,9 @@
   "title":"Story",
   "timline": [
       { "time": "24-10-2023","title": "Bertemu", "description": "Hari itu, Tuhan mempertemukan dua hati. 24 Oktober 2023 menjadi hari yang mengubah segalanya. Pertemuan pertama kami sederhana, tapi penuh arti."},
-      { "time": "14-02-2024","title": "Langkah Awal", "description": "Hari-hari penuh cerita. Perasaan kami semakin jelas, bahwa cinta ini layak diperjuangkan bersama."},
-      { "time": "21-07-2024","title": "Engagement", "description": "Di hadapan keluarga, kami mengikat janji untuk melangkah lebih jauh."},
+      { "time": "14-02-2024","title": "Langkah Awal", "description": "Hari-hari penuh cerita. Perasaan kami semakin yakin, bahwa cinta ini layak diperjuangkan bersama."},
+      { "time": "16-04-2024","title": "Pertemuan Keluarga", "description": "Di hari itu, dua keluarga bertemu dalam suasana hangat. Di hadapan mereka, kami memohon izin dan restu untuk melangkah bersama, mempererat ikatan cinta yang menyatukan dua kehidupan."},
+      { "time": "21-07-2024","title": "Lamaran", "description": "Di hadapan keluarga, kami mengikat janji untuk melangkah lebih jauh."},
       { "time": "02-02-2025","title": "Menikah", "description": "Kami memutuskan untuk melangkah lebih serius. untuk, memulai perjalanan baru sebagai pasangan suami istri."}
     ]
 },
@@ -106,15 +107,17 @@
   "bg":"assets/img/img-bg/bg-plain.webp",
   "detail": [
     {
+      "animate":"animate__bounceIn",
       "name": "Akad Nikah",
-      "date": "02 FEBRUARY 2025",
+      "date": "02 FEB 2025",
       "time": "08:00 WIB S/D SELESAI",
       "location": "VILLA VITA",
       "description": "Khusus Keluarga"
     },
     {
+      "animate":"animate__bounceIn animate__delay-1s",
       "name": "Resepsi",
-      "date": "02 FEBRUARY 2025",
+      "date": "02 FEB 2025",
       "time": "11:00 WIB S/D 14:00",
       "location": "VILLA VITA",
       "description": ""
