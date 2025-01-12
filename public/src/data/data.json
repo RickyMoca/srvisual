@@ -53,12 +53,12 @@
   }
 ],
 "mempelai": {
-    "bg":"assets/img/img-bg/bg-plain.webp",
+    "bg":"assets/img/img-bg/bg-primary.webp",
     "title":"The Couple",
     "bride": [
       {
         "bg": "",
-        "gender": "PUTRI",
+        "gender": "Putri",
         "photo": "https://i.ibb.co.com/Fz7jSYH/sr-2.jpg",
         "type": "MEMPELAI WANITA",
         "name": "SENY INDRIANI",
@@ -69,7 +69,7 @@
     "groom": [
       {
         "bg": "",
-        "gender": "PUTRA",
+        "gender": "Putra",
         "photo": "https://i.ibb.co.com/Fz7jSYH/sr-5.jpg",
         "type": "MEMPELAI PRIA",
         "name": "MOHAMAD RICKY",
@@ -79,7 +79,7 @@
     ]
 },
 "gallery": {
-    "bg":"assets/img/img-bg/bg-plain.webp",
+    "bg":"assets/img/img-bg/bg-primary.webp",
     "img": [
       {"img":"https://i.ibb.co.com/6FjZfJw/sr-1.jpg","width":"gl-tiga'"},
       {"img":"https://i.ibb.co.com/Fz7jSYH/sr-2.jpg","width":"gl-tiga'"},
@@ -93,7 +93,7 @@
     ]
 },
 "story": {
-  "bg":"assets/img/img-bg/bg-plain.webp",
+  "bg":"assets/img/img-bg/bg-primary.webp",
   "title":"Story",
   "timline": [
       { "time": "24-10-2023","title": "Bertemu", "description": "Hari itu, Tuhan mempertemukan dua hati. 24 Oktober 2023 menjadi hari yang mengubah segalanya. Pertemuan pertama kami sederhana, tapi penuh arti."},
@@ -104,7 +104,7 @@
     ]
 },
 "event": {
-  "bg":"assets/img/img-bg/bg-plain.webp",
+  "bg":"assets/img/img-bg/bg-primary.webp",
   "detail": [
     {
       "animate":"animate__bounceIn",
@@ -120,12 +120,12 @@
       "date": "02 FEB 2025",
       "time": "11:00 WIB S/D 14:00",
       "location": "VILLA VITA",
-      "description": ""
+      "description": "-"
     }
   ]
 },
 "live": {
-  "bg":"assets/img/img-bg/bg-plain.webp",
+  "bg":"assets/img/img-bg/bg-primary.webp",
   "title":"Live Streaming",
   "detail": [
       {
@@ -140,7 +140,7 @@
   ]
 },
 "location": {
-  "bg":"assets/img/img-bg/bg-plain.webp",
+  "bg":"assets/img/img-bg/bg-primary.webp",
   "title":"Live Streaming",
   "detail": [
       {
@@ -159,7 +159,7 @@
   "img1":"https://i.ibb.co.com/6FjZfJw/sr-1.jpg",
   "img2":"https://i.ibb.co.com/MCTSVNt/sr-6.jpg",
   "title":"RSVP",
-  "text":"Confirm your attendance and send your best wishes to Groom and Bride"
+  "text":"Konfirmasi kehadiran Anda dan sampaikan ucapan terbaik untuk kedua mempelai."
 },
 
 "thanks": {

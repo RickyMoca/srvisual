@@ -28,15 +28,26 @@
     z-index: 1
 }
 
+/* Event */
 .img-bride-groom {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+.img-couples{
+    border-radius: 30px 6px 30px 6px;
+    box-shadow: 2px 2px 5px 2px #a8a8a8be;
+    border: 2px solid #515F6B;
+}
+
 
 .bx{
     font-size: 25px;
 }
+.i-couple{
+    font-size: 10px;
+    
+ }
 
 .countdown-wrapper{
     font-size: 10px;
@@ -210,3 +221,4 @@
     border-left: 2px #515F6B dashed;
     
 }
+

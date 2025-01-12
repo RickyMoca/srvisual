@@ -17,7 +17,7 @@ async function submitForm(event) {
     // Nonaktifkan tombol submit
     submitButton.disabled = true;
     submitButton.innerText = "Mengirim...";
-    submitButton.classList.toggle("animate__pulse");
+    submitButton.classList.toggle("animate__bounceOut");
 
     try {
         const response = await fetch(url, {

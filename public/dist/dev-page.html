@@ -58,8 +58,8 @@
                             <div class="satumomen_track">
                                <ul class="satumomen_list">
                                     <li class="satumomen_slide" id="event">
-    <div class="container-mobile">
-        <div style="background-image:url('assets/img/img-bg/bg-plain.webp');position:absolute;inset:0;z-index:0;background-size:cover;"> </div>
+    <div class="container-mobile " style="background-image: url('assets/img/img-bg/bg-primary.webp'); ;">
+        <div style="position:absolute;inset:0;z-index:0;background-size:cover;"></div>
         <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
             <div style="width:100%;">
                 <div class="text-center mb-4 animate__animated animate__fadeInDown animate__slower">
@@ -94,9 +94,9 @@
                     </div>
                     <div class="ticket-body text-left card p-4" style="width: 50%;">
                         <div class="font-latin" style="font-size:30px;">Akad Nikah</div>
-                        <div  style="font-size:12px;">08:00 WIB S/D SELESAI</div>
-                        <div  style="font-size:12px;">VILLA VITA</div>
-                        <div  style="font-size:12px;">Khusus Keluarga</div>
+                        <div  style="font-size:12px;"><i class='bx bx-time-five i-couple'></i> 08:00 WIB S/D SELESAI</div>
+                        <div  style="font-size:12px;"><i class='bx bx-map i-couple'></i> VILLA VITA</div>
+                        <div  style="font-size:12px;"><i class='bx bx-notepad i-couple'></i> Khusus Keluarga</div>
                     </div>
                     </div>
                 </div>
@@ -108,9 +108,9 @@
                     </div>
                     <div class="ticket-body text-left card p-4" style="width: 50%;">
                         <div class="font-latin" style="font-size:30px;">Resepsi</div>
-                        <div  style="font-size:12px;">11:00 WIB S/D 14:00</div>
-                        <div  style="font-size:12px;">VILLA VITA</div>
-                        <div  style="font-size:12px;"></div>
+                        <div  style="font-size:12px;"><i class='bx bx-time-five i-couple'></i> 11:00 WIB S/D 14:00</div>
+                        <div  style="font-size:12px;"><i class='bx bx-map i-couple'></i> VILLA VITA</div>
+                        <div  style="font-size:12px;"><i class='bx bx-notepad i-couple'></i> -</div>
                     </div>
                     </div>
                 </div>
@@ -243,20 +243,20 @@
                 <!-- Name Field -->
                 <div class="form-group mb-2">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" class="form-control input-field" placeholder="Your name" required>
+                    <input type="text" id="name" name="name" class="form-control input-field" placeholder="Nama anda" required>
                 </div>
             
                 <!-- Message Field -->
                 <div class="form-group mb-2">
                     <label for="message">Berikan Ucapan</label>
-                    <textarea id="message" name="message" class="form-control input-field" rows="4" placeholder="Your message" required></textarea>
+                    <textarea id="message" name="message" class="form-control input-field" rows="4" placeholder="Pesan untuk mempelai" required></textarea>
                 </div>
             
                 <!-- Attendance and Total in the same row -->
                 <div class="form-row mb-2">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="attendance">Attendance</label>
+                            <label for="attendance">Apakah anda akan hadir ?</label>
                             <select id="attendance" name="attendance" class="form-control input-field" required>
                                 <option value="Hadir">Hadir</option>
                                 <option value="Tidak Hadir">Tidak Hadir</option>
@@ -266,7 +266,7 @@
             
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="total">Total Guest</label>
+                            <label for="total">Jumlah tamu</label>
                             <select id="total" name="total" class="form-control input-field" required>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
