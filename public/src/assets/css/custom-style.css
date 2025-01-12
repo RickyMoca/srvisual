@@ -240,8 +240,8 @@
     width: 80px;
     opacity: 50%;
 }
-.bg-lightt{
-    background-color: var(--light );
+.bgo{
+    background-color: var(--inv-base );
 }
 .btn-float{
     background-color: var(--inv-accent);

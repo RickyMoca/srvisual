@@ -1,7 +1,7 @@
 {
   "page_title": "Wedding Passport - Seny & Ricky",        
   "page_author": "Mohamad Ricky",
-  "musi": "https://assets.satumomen.com/musics/brisia-jodie-fabio-asher-aku-memilihmu-official-music-video-ya2fo8taav4-00-00-10-00-03-54-part.mp3",
+  "music": "https://assets.satumomen.com/musics/brisia-jodie-fabio-asher-aku-memilihmu-official-music-video-ya2fo8taav4-00-00-10-00-03-54-part.mp3",
   "countdown" : "2025-02-02T08:00",
   "base_url": {
     "css" : "assets/css/",
@@ -29,8 +29,8 @@
     { "name": "Event","icon": "bx bxs-calendar-heart" ,"page":"event.html"},
     { "name": "Live","icon": "bx bx-broadcast" ,"page":"live.html"},
     { "name": "Location","icon": "bx bxs-map" ,"page":"location.html"},
-    { "name": "RSVP","icon": "bx bxs-copy-alt" ,"page":"rsvp.html"},
     { "name": "Gallery","icon": "bx bxs-image" ,"page":"gallery.html"},
+    { "name": "RSVP","icon": "bx bxs-copy-alt" ,"page":"rsvp.html"},
     { "name": "Thanks","icon": "bx bxs-hand" ,"page":"thanks.html"}
 ],
 "cover": [
@@ -47,7 +47,7 @@
 "opening": [
   {
     "bg": "assets/img/img-bg/bg-opening.webp",
-    "img": "https://i.ibb.co.com/dcx0d32/sr-3.jpg",
+    "img": "https://i.ibb.co.com/Dz5KJ4B/opening.jpg",
     "quote": "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.",
     "tagQuote": "(Q.S. Ar-Rum : 21)"
   }
@@ -59,7 +59,7 @@
       {
         "bg": "",
         "gender": "Putri",
-        "photo": "https://i.ibb.co.com/Fz7jSYH/sr-2.jpg",
+        "photo": "https://i.ibb.co.com/k4GNk1B/cpw.jpg",
         "type": "MEMPELAI WANITA",
         "name": "SENY INDRIANI",
         "putraDari": "BAPAK MIYANTO & IBU NELIS NURHAYATI",
@@ -70,7 +70,7 @@
       {
         "bg": "",
         "gender": "Putra",
-        "photo": "https://i.ibb.co.com/Fz7jSYH/sr-5.jpg",
+        "photo": "https://i.ibb.co.com/68bhXqW/cpp.jpg",
         "type": "MEMPELAI PRIA",
         "name": "MOHAMAD RICKY",
         "putraDari": "BAPAK DEDE & IBU IIS AISYAH",
@@ -81,15 +81,16 @@
 "gallery": {
     "bg":"assets/img/img-bg/bg-primary.webp",
     "img": [
-      {"img":"https://i.ibb.co.com/6FjZfJw/sr-1.jpg","width":"gl-tiga'"},
-      {"img":"https://i.ibb.co.com/Fz7jSYH/sr-2.jpg","width":"gl-tiga'"},
       {"img":"https://i.ibb.co.com/dcx0d32/sr-3.jpg","width":"gl-tiga'"},
-      {"img":"https://i.ibb.co.com/n1zKxkB/sr-5.jpg","width":"gl-lima"},
+      {"img":"https://i.ibb.co.com/NV5mHg0/gallery-3.jpg","width":"gl-tiga"},
+      {"img":"https://i.ibb.co.com/Fz7jSYH/sr-2.jpg","width":"gl-tiga'"},
+      {"img":"https://i.ibb.co.com/P4ZtR9d/sr-8.jpg","width":"gl-tiga"},
+      {"img":"https://i.ibb.co.com/L9dj3vf/gallery-1.jpg","width":"gl-lima"},
+      {"img":"https://i.ibb.co.com/7grBrBj/sr-7.jpg","width":"gl-tiga"},
       {"img":"https://i.ibb.co.com/MCTSVNt/sr-6.jpg","width":"gl-lima"},
       {"img":"https://i.ibb.co.com/8BFFSxq/sr-4.jpg","width":"gl-tiga'"},
-      {"img":"https://i.ibb.co.com/7grBrBj/sr-7.jpg","width":"gl-tiga"},
-      {"img":"https://i.ibb.co.com/7grBrBj/sr-7.jpg","width":"gl-tiga"},
-      {"img":"https://i.ibb.co.com/P4ZtR9d/sr-8.jpg","width":"gl-tiga"}
+      {"img":"https://i.ibb.co.com/6FjZfJw/sr-1.jpg","width":"gl-tiga'"}
+
     ]
 },
 "story": {
@@ -135,9 +136,9 @@
       {
         "bg": "",
         "name": "Akad Nikah",
-        "date": "02 FEBRUARY 2025",
+        "date": "Tanggal 02 FEBRUARY 2025",
         "time": "Pukul 08:00 WIB S/D SELESAI",
-        "description": "Temui Kami secara virtual untuk menyaksikan acara pernikahan kami yang InsyaAllah kan disiarkan langsung melalui akun Instagram.",
+        "description": "Temui Kami secara virtual untuk menyaksikan prosesi Akad Nikah yang InsyaAllah akan disiarkan langsung melalui akun Instagram.",
         "account": "_senyindriani",
         "btn": "Join Live Streaming"
       }

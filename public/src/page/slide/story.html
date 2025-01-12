@@ -7,12 +7,14 @@
                 {% for item in story.timline %}
                 <div class="text-left mb-3 animate__animated animate__fadeInUp animate__slower" style="position:relative;">
                 <i style="transform:translateX(-4px) translateY(-2px);" class='bx bxs-heart-circle'></i>
+                    {% if not loop.last %}
                 <span style="height:100%;width:2px;position:absolute;background-color:var(--inv-border);transform:translateX(-17px) translateY(20px);"></span>
-                    <div class="editable font-weight-bold ml-4" style="font-size:12px; margin-top: -30px;">{{item.time}} | {{item.title}}</div>
+                    {% endif %}
+                <div class="editable font-weight-bold ml-4" style="font-size:12px; margin-top: -30px;">{{item.time}} | {{item.title}}</div>
                     <div class="editable quotes ml-4" style="font-size:12px;">{{item.description}}</div>
                 </div>
                {% endfor %}
 
         </div>
     </div>
-</li>
+</li>  

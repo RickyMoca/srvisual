@@ -178,4 +178,4 @@ function toTitleCase(str) {
         document.getElementById('guestNameSlot').textContent = toTitleCase(guestName);
     }
 
-//   getData();
+  getData();
