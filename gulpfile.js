@@ -7,8 +7,8 @@ const fs = require('fs'); // Untuk membaca file JSON
 const rename = require('gulp-rename'); // Untuk merename file, seperti menambahkan suffix
 
 // Variabel untuk folder sumber dan tujuan
-const src = 'public/src';  // Folder sumber
-const dist = 'public/dist'; // Folder tujuan
+const src = 'src';  // Folder sumber
+const dist = 'dist'; // Folder tujuan
 
 // Task untuk meminifikasi CSS
 function minifyCSS() {
