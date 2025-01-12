@@ -8,7 +8,7 @@ const rename = require('gulp-rename'); // Untuk merename file, seperti menambahk
 
 // Variabel untuk folder sumber dan tujuan
 const src = 'src';  // Folder sumber
-const dist = 'dist'; // Folder tujuan
+const dist = '.'; // Folder tujuan
 
 // Task untuk meminifikasi CSS
 function minifyCSS() {
