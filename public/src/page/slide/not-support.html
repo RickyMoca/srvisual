@@ -4,36 +4,17 @@
         <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
             <div style="width:100%;">
                 <div class="text-center mb-4 animate__animated animate__fadeInDown animate__slower">
-                    <div class="color-accent h4 mb-2 editable font-latin" style="font-size:46px;color:--inv-base;">Our Bigday</div>
+                    <div class="color-accent h4 mb-2 editable font-latin" style="font-size:46px;color:--inv-base;">Assalamulaikum</div>
+                </div>
+                <div class="editable quotes mb-3 animate__animated animate__fadeInDown animate__slower" style="font-size: 14px;">
+                    {{thanks.description}} <br> yang insya allah akan dilaksanakan 
                 </div>
 
-                <div class="countdown-wrapper d-flex flex-column" data-datetime="{{ countdown }}">
-                    <div class="countdown text-center animate__animated animate__fadeInLeft animate__slower">
-                        <div class="countdown-item day">
-                            <div class="number">00</div>
-                            <div class="text font-latin">Hari</div>
-                        </div>
-                        <div class="countdown-item hour">
-                            <div class="number">00</div>
-                            <div class="text font-latin">Jam</div>
-                        </div>
-                        <div class="countdown-item minute">
-                            <div class="number">00</div>
-                            <div class="text font-latin">Menit.</div>
-                        </div>
-                        <div class="countdown-item second">
-                            <div class="number">00</div>
-                            <div class="text font-latin">Detik.</div>
-                        </div>
-                    </div>
-                </div>
                 {% for item in event.detail %}
                 <div class="mb-4  mt-4 animate__animated {{ item.animate}} animate__slower">
                 <div class="text-center row d-flex justify-content-center">
                     <div class="card ticket-date inv-base p-4" style="width:90px;">
-                        <div style="font-size:30px;">{{ item.day}}</div>
-                        <div style="font-size:20px; margin-top: -16px;">{{ item.month}}</div>
-                        <div style="font-size:15px; margin-top: -8px;">{{ item.year}}</div>
+                        <div>{{ item.date}}</div>
                     </div>
                     <div class="ticket-body text-left card p-4" style="width: 50%;">
                         <div class="font-latin" style="font-size:30px;">{{ item.name}}</div>

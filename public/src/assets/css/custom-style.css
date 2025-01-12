@@ -6,7 +6,7 @@
 
  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hurricane&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap'); 
  :root {
-    --inv-bg: #ffffff;
+    --inv-bg: #EEF8FD;
     --inv-base: #000000;
     --inv-accent: #515F6B;
     --inv-border: #97a2ab;
@@ -14,10 +14,11 @@
     --font-accent: "Bebas Neue", cursive;
     --font-latin: "Hurricane", serif;
     --menu-bg: #20262c;
-    --menu-inactive: #ffffff;
+    --menu-inactive: #EEF8FD;
     --menu-active: #515F6B;
-    --btn-color: #ffffff;
+    --btn-color: #EEF8FD;
     --dark: #20262c;
+    --light:#EEF8FD;
 }
 
 .satumomen_slide .container-mobile {
@@ -67,7 +68,7 @@
 .card {
     
     border: none;
-    box-shadow: 5px 6px 6px 2px #e9ecef;
+    box-shadow: 5px 6px 6px 2px #0000001f;
     border-radius: 4px;
 }
 
@@ -222,3 +223,26 @@
     
 }
 
+
+.floating-stempel{
+    bottom: 120px;
+    gap: 12px;
+    margin: auto;
+    max-width: 500px;
+    position: absolute;
+    left: 20px
+}
+.floating-stempel {
+    bottom: 20px
+}
+
+.img-stempel img{
+    width: 80px;
+    opacity: 50%;
+}
+.bg-lightt{
+    background-color: var(--light );
+}
+.btn-float{
+    background-color: var(--inv-accent);
+}

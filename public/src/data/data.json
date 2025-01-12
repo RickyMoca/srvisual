@@ -1,7 +1,7 @@
 {
   "page_title": "Wedding Passport - Seny & Ricky",        
   "page_author": "Mohamad Ricky",
-  "musico": "https://assets.satumomen.com/musics/brisia-jodie-fabio-asher-aku-memilihmu-official-music-video-ya2fo8taav4-00-00-10-00-03-54-part.mp3",
+  "musi": "https://assets.satumomen.com/musics/brisia-jodie-fabio-asher-aku-memilihmu-official-music-video-ya2fo8taav4-00-00-10-00-03-54-part.mp3",
   "countdown" : "2025-02-02T08:00",
   "base_url": {
     "css" : "assets/css/",
@@ -47,7 +47,7 @@
 "opening": [
   {
     "bg": "assets/img/img-bg/bg-opening.webp",
-    "img": "https://i.ibb.co.com/Fz7jSYH/sr-2.jpg",
+    "img": "https://i.ibb.co.com/dcx0d32/sr-3.jpg",
     "quote": "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.",
     "tagQuote": "(Q.S. Ar-Rum : 21)"
   }
@@ -62,7 +62,7 @@
         "photo": "https://i.ibb.co.com/Fz7jSYH/sr-2.jpg",
         "type": "MEMPELAI WANITA",
         "name": "SENY INDRIANI",
-        "putraDari": "BAPAK. MIYANTO & IBU NELIS NURHAYATI",
+        "putraDari": "BAPAK MIYANTO & IBU NELIS NURHAYATI",
         "description": "@_senyindriani"
       }
     ],
@@ -73,7 +73,7 @@
         "photo": "https://i.ibb.co.com/Fz7jSYH/sr-5.jpg",
         "type": "MEMPELAI PRIA",
         "name": "MOHAMAD RICKY",
-        "putraDari": "BAPAK. DEDE & IBU IIS AISYAH",
+        "putraDari": "BAPAK DEDE & IBU IIS AISYAH",
         "description": "@rickymocaa"
       }
     ]
@@ -96,11 +96,11 @@
   "bg":"assets/img/img-bg/bg-primary.webp",
   "title":"Story",
   "timline": [
-      { "time": "24-10-2023","title": "Bertemu", "description": "Hari itu, Tuhan mempertemukan dua hati. 24 Oktober 2023 menjadi hari yang mengubah segalanya. Pertemuan pertama kami sederhana, tapi penuh arti."},
-      { "time": "14-02-2024","title": "Langkah Awal", "description": "Hari-hari penuh cerita. Perasaan kami semakin yakin, bahwa cinta ini layak diperjuangkan bersama."},
-      { "time": "16-04-2024","title": "Pertemuan Keluarga", "description": "Di hari itu, dua keluarga bertemu dalam suasana hangat. Di hadapan mereka, kami memohon izin dan restu untuk melangkah bersama, mempererat ikatan cinta yang menyatukan dua kehidupan."},
-      { "time": "21-07-2024","title": "Lamaran", "description": "Di hadapan keluarga, kami mengikat janji untuk melangkah lebih jauh."},
-      { "time": "02-02-2025","title": "Menikah", "description": "Kami memutuskan untuk melangkah lebih serius. untuk, memulai perjalanan baru sebagai pasangan suami istri."}
+      { "time": "24 Oktober 2023","title": "Bertemu", "description": "Hari itu, Tuhan mempertemukan dua hati. 24 Oktober 2023 menjadi hari yang mengubah segalanya. Pertemuan pertama kami sederhana, tapi penuh arti."},
+      { "time": "14 Februari 2024","title": "Langkah Awal", "description": "Hari-hari penuh cerita. Perasaan kami semakin yakin, bahwa cinta ini layak diperjuangkan bersama."},
+      { "time": "16 April 2024","title": "Pertemuan Keluarga", "description": "Di hari itu, dua keluarga bertemu dalam suasana hangat. Di hadapan mereka, kami memohon izin dan restu untuk melangkah bersama, mempererat ikatan cinta yang menyatukan dua kehidupan."},
+      { "time": "21 Juli 2024","title": "Lamaran", "description": "Di hadapan keluarga, kami mengikat janji untuk melangkah lebih jauh."},
+      { "time": "02 Februari 2025","title": "Menikah", "description": "Kami memutuskan untuk melangkah lebih serius. untuk, memulai perjalanan baru sebagai pasangan suami istri."}
     ]
 },
 "event": {
@@ -109,7 +109,9 @@
     {
       "animate":"animate__bounceIn",
       "name": "Akad Nikah",
-      "date": "02 FEB 2025",
+      "day": "02",
+      "month": "FEB",
+      "year": "2025",
       "time": "08:00 WIB S/D SELESAI",
       "location": "VILLA VITA",
       "description": "Khusus Keluarga"
@@ -117,7 +119,9 @@
     {
       "animate":"animate__bounceIn animate__delay-1s",
       "name": "Resepsi",
-      "date": "02 FEB 2025",
+      "day": "02",
+      "month": "FEB",
+      "year": "2025",
       "time": "11:00 WIB S/D 14:00",
       "location": "VILLA VITA",
       "description": "-"

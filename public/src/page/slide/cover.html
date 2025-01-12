@@ -1,8 +1,8 @@
 {% for item in cover %}
         <!-- Cover -->
         <li class="satumomen_slide">
-            <div class="container-mobile">
-                <div class style="background-image:url('{{ item.bg }}');position:absolute;inset:0;z-index:0;background-size:100% 100%;"></div>
+            <div class="container-mobile" style="background-image: url('{{item.bg}}'); position: absolute; background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <!-- <div class style="background-image: url('{{item.bg}}'); position:absolute;inset:0;z-index:0;background-size:100% 100%;"></div> -->
                 <div class="d-flex justify-content-center align-items-center flex-column" style="height:100%;">
                     <div style="width:280px;height:80px;z-index:1;" class="image-editable mx-auto mb-3 animate__animated animate__zoomInDown animate__slower">
                         <img src="{{ item.img1 }}" style="width: 100%;height: 100%;object-fit: contain;" alt="weddingpass.webp"/>
@@ -13,15 +13,15 @@
                     
                     <div style="width:100%;z-index:1;" class="mb-5">
                         <div class="text-center">
-                            <div style="background-color:var(--inv-border);border-radius:0.5rem;padding:10px;max-width:290px;margin:auto;backdrop-filter:blur(10px);" class="mb-4">
-                                <div class="editable mb-3 animate__animated animate__fadeInUp animate__slower text-light">
+                            <div style="background-color:#ffffff;border-radius:0.5rem;padding:10px;max-width:290px;margin:auto;backdrop-filter:blur(10px);" class="mb-4">
+                                <div class="editable mb-3 animate__animated animate__fadeInUp animate__slower">
                                     {{ item.textKepada }} <br> {{ item.textIbuBapa }}
                                 </div>
-                                <div id="guestNameSlot" class="editable color-accent h5 font-weight-bold animate__animated animate__fadeInUp animate__slower" style="color:rgb(255, 255, 255);font-size:18px;">Tamu Undangan</div>
-                            <div class="editable mb-3 animate__animated animate__fadeInUp animate__slower text-light" style="font-size:14.4px;"> {{ item.di }}</div>
+                                <div id="guestNameSlot" class="editable color-accent h5 font-weight-bold animate__animated animate__fadeInUp animate__slower" style="font-size:18px;">Tamu Undangan</div>
+                            <div class="editable mb-3 animate__animated animate__fadeInUp animate__slower" style="font-size:14.4px;"> {{ item.di }}</div>
 
                             </div>
-                            <button class="btn-open-invitation btn btn-light animate__animated animate__fadeInUp animate__slower" style="font-size:14.4px;">{{ item.btnText }}</button>
+                            <button class="btn-open-invitation btn btn-light animate__animated animate__pulse animate__slower animate__infinite	infinite" style="font-size:14.4px;">{{ item.btnText }}</button>
                         </div>
                     </div>
                 </div>
