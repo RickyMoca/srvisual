@@ -37,6 +37,8 @@ async function submitForm(event) {
         }
     } catch (error) {
         console.error("Error:", error); // Debug error
+        pushNotify('error','Error',error.message);
+
         alert("Error: " + error.message);
     } finally {
         // Aktifkan kembali tombol submit

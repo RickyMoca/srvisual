@@ -1,7 +1,7 @@
 {
   "page_title": "Undangan pernikahan Seny & Ricky",        
   "page_desc": "Undangan Pernikahan Seny Indriani &amp; Mohamad Ricky yang akan dilaksanakan pada Minggu, 02 Februari 2025 di Villa Vita.",
-  "page_img_preview": "https://i.ibb.co.com/12H7yzq/seny-ricky-Image-V1-1.jpg",
+  "page_img_preview": "assets/img/img-preview.jpg",
   "page_author": "Mohamad Ricky",
   "music": "https://assets.satumomen.com/musics/brisia-jodie-fabio-asher-aku-memilihmu-official-music-video-ya2fo8taav4-00-00-10-00-03-54-part.mp3",
   "countdown" : "2025-02-02T08:00",
@@ -51,7 +51,7 @@
 "opening": [
   {
     "bg": "assets/img/img-bg/bg-opening.webp",
-    "img": "https://i.ibb.co.com/Dz5KJ4B/opening.jpg",
+    "img": "assets/img/img-opening.jpg",
     "quote": "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.",
     "tagQuote": "(Q.S. Ar-Rum : 21)"
   }
@@ -63,7 +63,7 @@
       {
         "bg": "",
         "gender": "Putri",
-        "photo": "https://i.ibb.co.com/k4GNk1B/cpw.jpg",
+        "photo": "assets/img/img-cpw.jpg",
         "type": "MEMPELAI WANITA",
         "name": "SENY INDRIANI",
         "putraDari": "BAPAK MIYANTO & IBU NELIS NURHAYATI",
@@ -74,7 +74,7 @@
       {
         "bg": "",
         "gender": "Putra",
-        "photo": "https://i.ibb.co.com/68bhXqW/cpp.jpg",
+        "photo": "assets/img/img-cpp.jpg",
         "type": "MEMPELAI PRIA",
         "name": "MOHAMAD RICKY",
         "putraDari": "BAPAK DEDE & IBU IIS AISYAH",
@@ -85,16 +85,15 @@
 "gallery": {
     "bg":"assets/img/img-bg/bg-primary.webp",
     "img": [
-      {"img":"https://i.ibb.co.com/dcx0d32/sr-3.jpg","width":"gl-tiga'"},
-      {"img":"https://i.ibb.co.com/NV5mHg0/gallery-3.jpg","width":"gl-tiga"},
-      {"img":"https://i.ibb.co.com/Fz7jSYH/sr-2.jpg","width":"gl-tiga'"},
-      {"img":"https://i.ibb.co.com/P4ZtR9d/sr-8.jpg","width":"gl-tiga"},
-      {"img":"https://i.ibb.co.com/L9dj3vf/gallery-1.jpg","width":"gl-lima"},
-      {"img":"https://i.ibb.co.com/7grBrBj/sr-7.jpg","width":"gl-tiga"},
-      {"img":"https://i.ibb.co.com/MCTSVNt/sr-6.jpg","width":"gl-lima"},
-      {"img":"https://i.ibb.co.com/8BFFSxq/sr-4.jpg","width":"gl-tiga'"},
-      {"img":"https://i.ibb.co.com/6FjZfJw/sr-1.jpg","width":"gl-tiga'"}
-
+      {"img":"assets/img/img-gallery-1.jpg","width":"gl-tiga'"},
+      {"img":"assets/img/img-gallery-2.jpg","width":"gl-tiga'"},
+      {"img":"assets/img/img-gallery-3.jpg","width":"gl-tiga'"},
+      {"img":"assets/img/img-gallery-4.jpg","width":"gl-tiga'"},
+      {"img":"assets/img/img-gallery-5.jpg","width":"gl-tiga'"},
+      {"img":"assets/img/img-gallery-6.jpg","width":"gl-tiga'"},
+      {"img":"assets/img/img-gallery-7.jpg","width":"gl-tiga'"},
+      {"img":"assets/img/img-gallery-8.jpg","width":"gl-tiga'"},
+      {"img":"assets/img/img-gallery-9.jpg","width":"gl-tiga'"}
     ]
 },
 "story": {
@@ -102,10 +101,10 @@
   "title":"Story",
   "timline": [
       { "time": "24 Oktober 2023","title": "Bertemu", "description": "Hari itu, Tuhan mempertemukan dua hati. 24 Oktober 2023 menjadi hari yang mengubah segalanya. Pertemuan pertama kami sederhana, tapi penuh arti."},
-      { "time": "14 Februari 2024","title": "Langkah Awal", "description": "Hari-hari penuh cerita. Perasaan kami semakin yakin, bahwa cinta ini layak diperjuangkan bersama."},
+      { "time": "14 Februari 2024","title": "Langkah Awal", "description": "Hari-hari penuh cerita, Perasaan kami semakin yakin, bahwa cinta ini layak diperjuangkan bersama."},
       { "time": "16 April 2024","title": "Pertemuan Keluarga", "description": "Di hari itu, dua keluarga bertemu dalam suasana hangat. Di hadapan mereka, kami memohon izin dan restu untuk melangkah bersama, mempererat ikatan cinta yang menyatukan dua kehidupan."},
       { "time": "21 Juli 2024","title": "Lamaran", "description": "Di hadapan keluarga, kami mengikat janji untuk melangkah lebih jauh."},
-      { "time": "02 Februari 2025","title": "Menikah", "description": "Kami memutuskan untuk melangkah lebih serius. untuk, memulai perjalanan baru sebagai pasangan suami istri."}
+      { "time": "02 Februari 2025","title": "Menikah", "description": "Kami memutuskan untuk melangkah lebih serius, untuk memulai perjalanan baru sebagai pasangan suami istri."}
     ]
 },
 "event": {
@@ -117,8 +116,8 @@
       "day": "02",
       "month": "FEB",
       "year": "2025",
-      "time": "08:00 WIB S/D SELESAI",
-      "location": "VILLA VITA",
+      "time": "08:00 WIB s.d. selesai",
+      "location": "Villa Vita",
       "description": "Khusus Keluarga"
     },
     {
@@ -127,8 +126,8 @@
       "day": "02",
       "month": "FEB",
       "year": "2025",
-      "time": "11:00 WIB S/D 14:00",
-      "location": "VILLA VITA",
+      "time": "11:00 WIB s.d. 14:00 WIB",
+      "location": "Villa Vita",
       "description": "-"
     }
   ]
@@ -140,9 +139,9 @@
       {
         "bg": "",
         "name": "Akad Nikah",
-        "date": "Tanggal 02 FEBRUARY 2025",
-        "time": "Pukul 08:00 WIB S/D SELESAI",
-        "description": "Temui Kami secara virtual untuk menyaksikan prosesi Akad Nikah yang InsyaAllah akan disiarkan langsung melalui akun Instagram.",
+        "date": "02 Februari 2025",
+        "time": "08:00 WIB s.d. selesai",
+        "description": "Saksikan prosesi Akad Nikah kami secara virtual, yang InsyaAllah akan disiarkan langsung melalui akun Instagram.",
         "account": "_senyindriani",
         "btn": "Join Live Streaming"
       }
@@ -165,8 +164,8 @@
 
 "rsvp":{
   "bg":"assets/img/img-bg/bg-rsvp.webp",
-  "img1":"https://i.ibb.co.com/6FjZfJw/sr-1.jpg",
-  "img2":"https://i.ibb.co.com/MCTSVNt/sr-6.jpg",
+  "img1":"assets/img/img-gallery-1.jpg",
+  "img2":"assets/img/img-gallery-3.jpg",
   "title":"RSVP",
   "text":"Konfirmasi kehadiran Anda dan sampaikan ucapan terbaik untuk kedua mempelai."
 },

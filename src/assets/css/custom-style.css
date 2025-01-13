@@ -21,6 +21,9 @@
     --light:#EEF8FD;
 }
 
+body{
+    font-size: 13px;
+}
 .sn-notifications-container {
     /* colors */
     --sn-success-color: rgb(0, 117, 49);
@@ -257,4 +260,9 @@
 }
 .btn-float{
     background-color: var(--inv-accent);
+}
+
+.opening-name{
+    margin-bottom: 1px;
+    color: var(--inv-base);
 }
