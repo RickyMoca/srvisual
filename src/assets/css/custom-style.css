@@ -21,6 +21,18 @@
     --light:#EEF8FD;
 }
 
+.sn-notifications-container {
+    /* colors */
+    --sn-success-color: rgb(0, 117, 49);
+    --sn-success-progress-color: var(--inv-base);
+    --sn-error-color: rgb(158, 0, 0);
+    --sn-error-progress-color: var(--inv-base);
+    --sn-warning-color: rgb(123, 92, 0);
+    --sn-warning-progress-color: var(--inv-base);
+    --sn-info-color: rgb(0, 107, 139);
+    --sn-info-progress-color: var(--inv-base);
+  }
+
 .satumomen_slide .container-mobile {
     position: relative
 }

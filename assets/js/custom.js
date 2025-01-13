@@ -10,14 +10,11 @@ async function submitForm(event) {
 
     // Menampilkan data input di console
     console.log("Data yang akan dikirim:");
-    for (const [key, value] of formData.entries()) {
-        console.log(`${key}: ${value}`);
-    }
 
     // Nonaktifkan tombol submit
     submitButton.disabled = true;
     submitButton.innerText = "Mengirim...";
-    submitButton.classList.toggle("animate__bounceOut");
+    submitButton.classList.toggle("animate__bounceIn");
 
     try {
         const response = await fetch(url, {
@@ -33,9 +30,10 @@ async function submitForm(event) {
             getData(); // Memanggil getData() untuk memperbarui data setelah berhasil submit
             form.reset();
             totalSelect.disabled = false;
-            alert("Data berhasil dikirim!");
+            pushNotify('success','Terimakasih','Data berhasil dikirim');
+            
         } else {
-            alert("Gagal mengirim data: " + result.data);
+             pushNotify('success','Gagal mengirim data',result.data);
         }
     } catch (error) {
         console.error("Error:", error); // Debug error
@@ -88,7 +86,6 @@ async function getData() {
         }
     } catch (error) {
         console.error("Error:", error); // Menampilkan error jika terjadi masalah
-        alert("Error: " + error.message);
     }
 }
 
@@ -113,7 +110,7 @@ function displayData(data) {
         <div class="card p-2 mt-2">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="user d-flex flex-row">
-                    <img src="https://admirenabanza.com/wp-content/uploads/2024/09/Untitled-3-02.png" width="30" height="30" class="user-img rounded-circle mt-2 mr-2">
+                    <img src="assets/img/img-bg/user.png" width="30" height="30" class="user-img rounded-circle mt-2 mr-2">
                     <span>
                     <small class="font-weight-bold nameo"><i class='konfrim bx ${item.Attendance === 'Hadir' ? 'bxs-badge-check text-success' : 'bxs-x-circle text-danger'}'></i>  ${name}</small> 
                     <br><div class="msg">"${item.Message}"</div>
@@ -179,3 +176,25 @@ function toTitleCase(str) {
     }
 
   getData();
+
+  function pushNotify(type,title,message) {
+    new Notify({
+      status: type,
+      title: title,
+      text: message,
+      effect: 'fade',
+      speed: 300,
+      customClass: null,
+      customIcon: null,
+      showIcon: true,
+      showCloseButton: true,
+      autoclose: true,
+      autotimeout: 3000,
+      gap: 20,
+      distance: 20,
+      type: 'outline',
+      position: 'right top'
+    })
+  }
+
+

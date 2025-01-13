@@ -1,5 +1,7 @@
 {
-  "page_title": "Wedding Passport - Seny & Ricky",        
+  "page_title": "Undangan pernikahan Seny & Ricky",        
+  "page_desc": "Undangan Pernikahan Seny Indriani &amp; Mohamad Ricky yang akan dilaksanakan pada Minggu, 02 Februari 2025 di Villa Vita.",
+  "page_img_preview": "https://i.ibb.co.com/12H7yzq/seny-ricky-Image-V1-1.jpg",
   "page_author": "Mohamad Ricky",
   "music": "https://assets.satumomen.com/musics/brisia-jodie-fabio-asher-aku-memilihmu-official-music-video-ya2fo8taav4-00-00-10-00-03-54-part.mp3",
   "countdown" : "2025-02-02T08:00",
@@ -10,6 +12,7 @@
     "bg" : "assets/img/img-bg/"
   },
   "css_path": [
+    "https://cdn.jsdelivr.net/npm/simple-notify/dist/simple-notify.css",
     "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css",
     "assets/css/animate.min.css",
     "assets/css/bootstrap.min.css",
@@ -17,6 +20,7 @@
     "assets/css/custom-style.min.css"
   ],
   "js_path": [
+  {"js":"https://cdn.jsdelivr.net/npm/simple-notify/dist/simple-notify.min.js","type":""},
   {"js":"assets/js/theme-app.js","type":"0ec6dc73e469a5f35dc42581-text/javascript"},
   {"js":"assets/js/themesv2.js","type":"0ec6dc73e469a5f35dc42581-text/javascript"},
   {"js":"assets/js/custom.js","type":"0ec6dc73e469a5f35dc42581-text/javascript"}
