@@ -6,7 +6,7 @@
 
  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hurricane&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap'); 
  :root {
-    --inv-bg: #EEF8FD;
+    --inv-bg: #414b54;
     --inv-base: #000000;
     --inv-accent: #515F6B;
     --inv-border: #97a2ab;
@@ -256,7 +256,7 @@ body{
     opacity: 50%;
 }
 .bgo{
-    background-color: var(--inv-base );
+    background-color: var(--inv-bg );
 }
 .btn-float{
     background-color: var(--inv-accent);
@@ -265,4 +265,23 @@ body{
 .opening-name{
     margin-bottom: 1px;
     color: var(--inv-base);
+}
+
+.btn-lightbox{
+    background-color: #130f0f67;
+}
+
+.lightbox-arrow{
+    background-color: #645d5d4e;
+    color: white;
+}
+
+.modal-content{
+    background-color: var(--inv-border);
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #5856564d; /* Latar belakang hitam */
+    cursor: not-allowed; /* Kursor menunjukkan elemen tidak dapat diklik */
+    opacity: 1; /* Transparansi untuk menunjukkan elemen tidak aktif */
 }

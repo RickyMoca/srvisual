@@ -22,9 +22,11 @@
                         <div id="satuMomen" data-guest="" data-group="VIP">
                             <div class="satumomen_track">
                                 <ul class="satumomen_list">
-                                 {% for item in menu %}
-                                    {% include "slide/"+item.page %}
-                                 {% endfor %}
+                                {% for item in menu %}
+                                    <li class="satumomen_slide" id="{{ item.name }}">
+                                        {% include "slide/" + item.page %}
+                                    </li>
+                                {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -87,14 +89,9 @@
             <div class="modal-content" style="border-radius: .8rem;">
                 <div class="modal-body text-center justify-content-center align-items-center">
                     <h2>Pemberitahuan</h2>
-                    <p>Browser yang kamu gunakan mungkin kurang kompatibel. Beberapa fungsi undangan ini mungkin tidak dapat berjalan dengan baik. Kami merekomendasikan Browser Chrome. Klik tombol dibawah ini untuk mendownload.</p>
+                    <p>Browser yang kamu gunakan mungkin kurang kompatibel. Beberapa fungsi undangan ini mungkin tidak dapat berjalan dengan baik. Kami merekomendasikan Browser Chrome. atau klik disini untuk melihat undangan versi simpel</p>
                     <div class="d-flex justify-content-center">
-                        <a href="https://apps.apple.com/id/app/google-chrome/id535886823" class="btn p-1" target="_BLANK">
-                            <img src="#" alt="AppStore" height="40px">
-                        </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.android.chrome&hl=in&gl=US" class="btn p-1" target="_BLANK">
-                            <img src="#" alt="PlayStore" height="40px">
-                        </a>
+                        <a href="not-support.html" class="btn p-1" target="_BLANK"> </a>
                     </div>
                 </div>
                 <div class="modal-footer">

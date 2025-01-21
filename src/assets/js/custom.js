@@ -1,4 +1,4 @@
-const url = "https://script.google.com/macros/s/AKfycbwiQ6HHR6gox7kQY92rdFWR53xIxZx20KNR4huI0YwETeoqAkbidKbZCVpDGNvLpb2w/exec?key=020225";
+const url = "https://script.google.com/macros/s/AKfycbzY11aFjP19i6DkdTFkp0J00mORj0sw_25DRe1LMmwW8zK2xMtenPvXYEJtNPre7Jlz/exec?key=020225";
 
 async function submitForm(event) {
     event.preventDefault();
@@ -8,13 +8,11 @@ async function submitForm(event) {
     const totalSelect = document.getElementById('total');
     const formData = new FormData(form);
 
-    // Menampilkan data input di console
-    console.log("Data yang akan dikirim:");
-
     // Nonaktifkan tombol submit
     submitButton.disabled = true;
     submitButton.innerText = "Mengirim...";
     submitButton.classList.toggle("animate__bounceIn");
+    const formGroup = document.getElementById('frm-total');
 
     try {
         const response = await fetch(url, {
@@ -24,22 +22,21 @@ async function submitForm(event) {
 
         const result = await response.json();
 
-        console.log("Data sedang dikirim"); // Debug respons setelah parsing
 
         if (result === "Data added successfully") {
-            getData(); // Memanggil getData() untuk memperbarui data setelah berhasil submit
             form.reset();
             totalSelect.disabled = false;
+            formGroup.hidden = false;
             pushNotify('success','Terimakasih','Data berhasil dikirim');
+            getData(); // Memanggil getData() untuk memperbarui data setelah berhasil submit
             
         } else {
-             pushNotify('success','Gagal mengirim data',result.data);
+             pushNotify('error','Gagal mengirim data','');
         }
     } catch (error) {
         console.error("Error:", error); // Debug error
-        pushNotify('error','Error',error.message);
+        pushNotify('error','Priksa koneksi internet anda!',error.message);
 
-        alert("Error: " + error.message);
     } finally {
         // Aktifkan kembali tombol submit
         submitButton.disabled = false;
@@ -52,14 +49,17 @@ document.getElementById('attendance').addEventListener('change', function () {
     const attendanceValue = this.value;
     const totalSelect = document.getElementById('total');
     const hiddenTotal = document.getElementById('hiddenTotal');
+    const formGroup = document.getElementById('frm-total');
 
     if (attendanceValue === 'Hadir') {
         totalSelect.value = '1'; // Set default value ke 1
         totalSelect.disabled = false; // Aktifkan kembali dropdown
         hiddenTotal.value = totalSelect.value; // Set nilai input tersembunyi
+        formGroup.hidden = false; // Nonaktifkan dropdown
     } else if (attendanceValue === 'Tidak Hadir') {
         totalSelect.value = '0'; // Set value ke 0
         totalSelect.disabled = true; // Nonaktifkan dropdown
+        formGroup.hidden = true; // Nonaktifkan dropdown
         hiddenTotal.value = '0'; // Set nilai input tersembunyi ke 0
     }
 });
@@ -70,7 +70,7 @@ document.getElementById('total').addEventListener('change', function () {
     hiddenTotal.value = this.value;
 });
 
-
+document.querySelector('.btn-open-invitation').onclick = getData;
 
 
 async function getData() {  
@@ -81,13 +81,12 @@ async function getData() {
         // Cek jika response berhasil
         if (response.ok) {
             const data = await response.json(); // Parsing response ke JSON
-            console.log("Data berhasil diambil"); // Menampilkan data di console (untuk debugging)
             displayData(data);
         } else {
             throw new Error("Gagal mendapatkan data: " + response.statusText);
         }
     } catch (error) {
-        console.error("Error:", error); // Menampilkan error jika terjadi masalah
+        pushNotify('error','Priksa koneksi internet anda!','');
     }
 }
 
@@ -151,7 +150,7 @@ function toTitleCase(str) {
     }
     
     // Fungsi untuk mendapatkan parameter URL secara manual
-    function getQueryParameter(param) {
+ function getQueryParameter(param) {
         // Ambil query string dari URL
         var queryString = window.location.search.substring(1);
         var params = queryString.split("&");
@@ -174,10 +173,9 @@ function toTitleCase(str) {
     
     // Menampilkan nama tamu jika ada parameter "to"
     if (guestName) {
-        document.getElementById('guestNameSlot').textContent = toTitleCase(guestName);
+        document.getElementById('guestNameSlot').textContent = guestName;
     }
 
-  getData();
 
   function pushNotify(type,title,message) {
     new Notify({
@@ -198,5 +196,6 @@ function toTitleCase(str) {
       position: 'right top'
     })
   }
+
 
 
