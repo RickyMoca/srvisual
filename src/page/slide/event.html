@@ -1,4 +1,4 @@
-    <div class="container-mobile " style="background-image: url('{{event.bg}}'); ;">
+    <div class="container-mobile" style="background-image: url('{{event.bg}}'); ;">
         <div style="position:absolute;inset:0;z-index:0;background-size:cover;"></div>
         <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
             <div style="width:100%;">
@@ -26,9 +26,9 @@
                         </div>
                     </div>
                 </div>
+                <div id="eventDetail" class="mt-4">
                 {% for item in event.detail %}
-                <div class="mb-4  mt-4 animate__animated {{ item.animate}} animate__slower">
-                <div class="text-center row d-flex justify-content-center">
+                <div class="mb-4 text-center row d-flex justify-content-center animate__animated {{ item.animate}} animate__slower">
                     <div class="card ticket-date inv-base p-2" style="width:90px;">
                         <div style="font-size:30px;">{{ item.day}}</div>
                         <div style="font-size:20px; margin-top: -16px;">{{ item.month}}</div>
@@ -41,8 +41,26 @@
                         <div  style="font-size:12px;"><i class='bx bx-notepad i-couple'></i> {{ item.description}}</div>
                     </div>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
+
+                <div id="eventDetail2" class="mt-4">
+                    {% for item in event.detail2 %}
+                <div class="mb-4 text-center row d-flex justify-content-center animate__animated {{ item.animate}} animate__slower">
+                    <div class="card ticket-date inv-base p-2" style="width:90px;">
+                        <div style="font-size:30px;">{{ item.day}}</div>
+                        <div style="font-size:20px; margin-top: -16px;">{{ item.month}}</div>
+                        <div style="font-size:15px; margin-top: -8px;">{{ item.year}}</div>
+                    </div>
+                    <div class="ticket-body text-left card p-2 pl-3" style="width: 50%;">
+                        <div class="font-latin" style="font-size:25px;">{{ item.name}}</div>
+                        <div  style="font-size:12px;"><i class='bx bx-time-five i-couple'></i> {{ item.time}}</div>
+                        <div  style="font-size:12px;"><i class='bx bx-map i-couple'></i> {{ item.location}}</div>
+                        <div  style="font-size:12px;"><i class='bx bx-notepad i-couple'></i> {{ item.description}}</div>
+                    </div>
+                    </div>
+                    {% endfor %}
+                </div>
             
             </div> 
         </div>

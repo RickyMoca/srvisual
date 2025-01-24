@@ -223,7 +223,7 @@
                 <div class="color-accent h4 mb-2 editable font-latin" style="font-size:46px;color:--inv-base;">RSVP</div>
             </div>
 
-            <form onsubmit="submitForm(event)" class="formContainer p-2 mb-2 rounded-lg shadow-lg">
+            <form  id="rsvpForm" class="formContainer p-2 mb-2 rounded-lg shadow-lg">
                 <!-- Name Field -->
                 <div class="form-group mb-2">
                     <label for="name">Name</label>
@@ -265,7 +265,7 @@
             
                 <!-- Submit Button -->
                 <div class="d-grid mb-3">
-                    <button type="submit" class="btnSubmit btn btn-block animate__animated">Submit</button>
+                    <button id="submitButton" type="submit" class="btnSubmit btn btn-block animate__animated">Submit</button>
                 </div>
             </form>
             
@@ -315,12 +315,16 @@
             <!-- start script -->
         
         <script src="https://cdn.jsdelivr.net/npm/simple-notify/dist/simple-notify.min.js"></script>
+        <script type="module" src="assets/js/form.js"></script>
         
         <script src="assets/js/theme-app.js"></script>
+        <script type="module" src="assets/js/form.js"></script>
         
         <script src="assets/js/themesv2.js"></script>
+        <script type="module" src="assets/js/form.js"></script>
         
         <script src="assets/js/custom.js"></script>
+        <script type="module" src="assets/js/form.js"></script>
         
 
 

@@ -59,59 +59,32 @@
                         <div id="satuMomen" data-guest="" data-group="VIP">
                             <div class="satumomen_track">
                                <ul class="satumomen_list">
-                                        <div class="container-mobile " style="background-image: url('assets/img/img-bg/bg-primary.webp'); ;">
-        <div style="position:absolute;inset:0;z-index:0;background-size:cover;"></div>
-        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
-            <div class="text-center" style="width: 100%;">
-                <div class="title font-latin text-center color-accent animate__animated animate__fadeInDown animate__slower">The Couple</div>
-                
-                <div class="d-flex flex-row justify-content-start align-items-end mb-5" style="gap:24px;">
-                    <div style="height:190px;width:130px;min-width:130px;overflow:hidden;" class="image-editable animate__animated animate__fadeInDown animate__slower img-couples">
-                        <img class="img-bride-groom" src="assets/img/img-cpw.jpg" alt="assets/img/img-cpw.jpg"/>
-                    </div>
-                    <div class="kotak-satu">
-                        <div class="text-left animate__animated animate__fadeInUp animate__slower mb-2">
-                            <div class="editable color-accent" style="font-size:14.4px;">Nama</div>
-                            <div class="editable" style="font-size:14.4px;">SENY INDRIANI</div>
-                        </div>
-                        <div class="text-left animate__animated animate__fadeInUp animate__slower mb-2">
-                            <div class="editable color-accent" style="font-size:14.4px;">Putri dari</div>
-                            <div class="editable" style="font-size:14.4px;">BAPAK MIYANTO &amp; IBU NELIS NURHAYATI</div>
-                        </div>
-                        <div class="text-left animate__animated animate__fadeInUp animate__slower">
-                            <div class="editable color-accent" style="font-size:14.4px;">Deskripsi</div>
-                            <div class="editable" style="font-size:14.4px;">@_senyindriani</div>
-                        </div>
+                                        <div class="container-mobile " style="background-image: url('assets/img/img-bg/bg-rsvp.webp'); ;">
+        <div style="position:absolute;inset:0;z-index:0;background-size:100% 100%;"></div>
+        <div class="h-100 position-relative d-flex justify-content-center align-items-center">
+            <div class="w-100 px-4">
+                <div class="animate__animated animate__fadeInRight animate__slower">
+                    <div class="image-editable" style="width:248px;height:195px;margin:auto;overflow:hidden;transform:translate(15px, 45px) rotate(356deg);border:4px solid var(--inv-border);box-shadow:#5f775d3d -11px 20px 20px;">
+                        <img src="assets/img/img-gallery-1.jpg" style="width: 100%; height: 100%; object-fit: cover" alt="no-image.jpg"/>
                     </div>
                 </div>
-        
-        <div class="hr mb-5"></div>
-        
-                <div class="d-flex flex-row justify-content-start align-items-end mb-5" style="gap:24px;">
-                        <div style="height:190px;width:130px;min-width:130px;overflow:hidden;" class="image-editable animate__animated animate__fadeInUp animate__slower img-couples">
-                        <img class="img-bride-groom" src="assets/img/img-cpp.jpg" alt="assets/img/img-cpp.jpg"/>
-                    </div>
-                    <div class="kotak-satu">
-                        <div class="text-left animate__animated animate__fadeInUp animate__slower mb-2">
-                            <div class="editable color-accent" style="font-size:14.4px;">Nama</div>
-                            <div class="editable" style="font-size:14.4px;">MOHAMAD RICKY</div>
-                        </div>
-                        <div class="text-left animate__animated animate__fadeInUp animate__slower mb-2">
-                            <div class="editable color-accent" style="font-size:14.4px;">Putra dari</div>
-                            <div class="editable" style="font-size:14.4px;">BAPAK DEDE &amp; IBU IIS AISYAH</div>
-                        </div>
-                        <div class="text-left animate__animated animate__fadeInUp animate__slower">
-                            <div class="editable color-accent" style="font-size:14.4px;">Deskripsi</div>
-                            <div class="editable" style="font-size:14.4px;">@rickymocaa</div>
-                        </div>
+                <div class="animate__animated animate__fadeInLeft animate__slower">
+                    <div class="image-editable" style="width:248px;height:195px;margin:auto;overflow:hidden;margin-bottom:20px;transform:translate(-13px, 0px) rotate(4deg);border:4px solid var(--inv-border);box-shadow:#5f775d3d 6px 7px 20px;">
+                        <img src="assets/img/img-gallery-3.jpg" style="width: 100%; height: 100%; object-fit: cover" alt="no-image.jpg"/>
                     </div>
                 </div>
-        
+                <div class="text-center">
+                    <div class="editable mb-4 animate__animated animate__fadeInUp animate__slower" style="font-size:13px;">
+                        Konfirmasi kehadiran Anda dan sampaikan ucapan terbaik untuk kedua mempelai.
+                    </div>
+                    <button class="px-4 btn-rsvp btn btn-dark rounded-pill mb-4 animate__animated animate__pulse animate__slower animate__infinite infinite" style="font-size:10px;">RSVP & Kirim ucapan</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="floating-stempel img-stempel animate__animated animate__zoomInDown animate__slower animate__delay-2">
-        <img src="assets/img/img-bg/img-stempel.webp" alt="assets/img/img-bg/img-stempel.webp">
-    </div>
-</div>
+
+
+
                                 </ul>
                             </div>
                         </div>
@@ -231,7 +204,7 @@
                 <div class="color-accent h4 mb-2 editable font-latin" style="font-size:46px;color:--inv-base;">RSVP</div>
             </div>
 
-            <form onsubmit="submitForm(event)" class="formContainer p-2 mb-2 rounded-lg shadow-lg">
+            <form  id="rsvpForm" class="formContainer p-2 mb-2 rounded-lg shadow-lg">
                 <!-- Name Field -->
                 <div class="form-group mb-2">
                     <label for="name">Name</label>
@@ -273,7 +246,7 @@
             
                 <!-- Submit Button -->
                 <div class="d-grid mb-3">
-                    <button type="submit" class="btnSubmit btn btn-block animate__animated">Submit</button>
+                    <button id="submitButton" type="submit" class="btnSubmit btn btn-block animate__animated">Submit</button>
                 </div>
             </form>
             
@@ -323,12 +296,16 @@
             <!-- start script -->
         
         <script src="https://cdn.jsdelivr.net/npm/simple-notify/dist/simple-notify.min.js"></script>
+        <script type="module" src="assets/js/form.js"></script>
         
         <script src="assets/js/theme-app.js"></script>
+        <script type="module" src="assets/js/form.js"></script>
         
         <script src="assets/js/themesv2.js"></script>
+        <script type="module" src="assets/js/form.js"></script>
         
         <script src="assets/js/custom.js"></script>
+        <script type="module" src="assets/js/form.js"></script>
         
 
 

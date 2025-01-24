@@ -3,7 +3,7 @@
         <div class="h-70  position-relative d-flex justify-content-center align-items-center">
             <div style="width:100%;">
                 {% for item in location.detail %}
-                <div>
+                <div id="locDetail">
                     <div style="width:100%;margin:auto;border-radius:10px;overflow:hidden;margin-bottom:5px;padding-bottom:100%;position:relative;" class="animate__animated animate__fadeInDown animate__slow">
                         <iframe width="100%" height="100%" style="border:0;position:absolute;" allowfullscreen="" src="{{item.maps_url}}" class="maps-embed"></iframe>
                     </div>
@@ -13,7 +13,19 @@
                         <a href="{{item.maps_link}}" class="btn-maps-link btn btn-primary rounded-pill mb-4 animate__animated animate__pulse animate__slower animate__infinite	infinite" target="_blank" rel="noreferrer noopener">{{item.btnText}}</a>
                     </div>
                 </div>
+                {% endfor %}
+                {% for item in location.detail2 %}
+                <div id="locDetail2">
+                    <div style="width:100%;margin:auto;border-radius:10px;overflow:hidden;margin-bottom:5px;padding-bottom:100%;position:relative;" class="animate__animated animate__fadeInDown animate__slow">
+                        <iframe width="100%" height="100%" style="border:0;position:absolute;" allowfullscreen="" src="{{item.maps_url}}" class="maps-embed"></iframe>
+                    </div>
+                    <div class="text-center animate__animated animate__fadeInUp animate__slow">
+                        <div class="title color-accent font-latin">{{item.name}}</div>
+                        <div class="mb-3">{{item.address}}</div>
+                        <a href="{{item.maps_link}}" class="btn-maps-link btn btn-primary rounded-pill mb-4 animate__animated animate__pulse animate__slower animate__infinite	infinite" target="_blank" rel="noreferrer noopener">{{item.btnText}}</a>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>

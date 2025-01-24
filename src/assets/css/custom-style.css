@@ -126,6 +126,17 @@ body{
 
 /* Form styling */
 
+.modal-content{
+    background-color: #fffffff7;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #5856564d; /* Latar belakang hitam */
+    cursor: not-allowed; /* Kursor menunjukkan elemen tidak dapat diklik */
+    opacity: 1; /* Transparansi untuk menunjukkan elemen tidak aktif */
+}
+
+
 .formContainer{
     background-color: var(--inv-base);
     border-radius: 0.8rem;
@@ -276,12 +287,3 @@ body{
     color: white;
 }
 
-.modal-content{
-    background-color: var(--inv-border);
-}
-
-.form-control:disabled, .form-control[readonly] {
-    background-color: #5856564d; /* Latar belakang hitam */
-    cursor: not-allowed; /* Kursor menunjukkan elemen tidak dapat diklik */
-    opacity: 1; /* Transparansi untuk menunjukkan elemen tidak aktif */
-}

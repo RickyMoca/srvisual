@@ -131,6 +131,28 @@
       "location": "Villa Vita",
       "description": "-"
     }
+  ],
+  "detail2": [
+    {
+      "animate":"animate__bounceIn",
+      "name": "Tasyakur Walimah",
+      "day": "29",
+      "month": "JAN",
+      "year": "2025",
+      "time": "10:00 WIB s.d. Selesai",
+      "location": "Jl. Cibaduyut No. 183 RT07/RW02 Blok Situ",
+      "description": "-"
+    },
+    {
+      "animate":"animate__bounceIn animate__delay-1s",
+      "name": "Akad Nikah",
+      "day": "02",
+      "month": "FEB",
+      "year": "2025",
+      "time": "08:00 WIB s.d. selesai",
+      "location": "Villa Vita",
+      "description": "-"
+    }
   ]
 },
 "live": {
@@ -157,6 +179,16 @@
         "address": "Jl. Pagermaneuh No.50, Pagerwangi, Kec. Lembang, Kabupaten Bandung Barat, Jawa Barat 40391",
         "maps_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1168.7471201985038!2d107.61971898888261!3d-6.838728932249548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e1000715a941%3A0x9bcbf42245e1046a!2sVilla%20Vita!5e0!3m2!1sen!2sid!4v1735189058385!5m2!1sen!2sid",
         "maps_link": "https://www.google.com/maps/place/Villa+Vita/@-6.8387289,107.619719,18.76z/data=!4m14!1m7!3m6!1s0x2e68e1000715a941:0x9bcbf42245e1046a!2sVilla+Vita!8m2!3d-6.8387815!4d107.6196131!16s%2Fg%2F11y48mt5qs!3m5!1s0x2e68e1000715a941:0x9bcbf42245e1046a!8m2!3d-6.8387815!4d107.6196131!16s%2Fg%2F11y48mt5qs?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D",
+        "btnText": "Petunjuk Ke Lokasi"
+     
+      }
+  ],
+  "detail2": [
+      {
+        "name": "Cibaduyut",
+        "address": "Jl. Cibaduyut No.183, RT07/RW02 Bloksitu, Kec. Bojongloa Kidul, Kota Bandung, Jawa Barat 40238",
+        "maps_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.52791005343485!2d107.59505034385681!3d-6.956532847758888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e8c2518ada75%3A0xd91f3a44f2439a55!2sBandung%2C%20Cibaduyut%20Wetan%2C%20Bojongloa%20Kidul%2C%20Bandung%20City%2C%20West%20Java%2040238!5e0!3m2!1sen!2sid!4v1737653605523!5m2!1sen!2sid",
+        "maps_link": "https://www.google.com/maps/place/Bandung,+Cibaduyut+Wetan,+Bojongloa+Kidul,+Bandung+City,+West+Java+40238/@-6.9565328,107.5950503,21z/data=!4m14!1m7!3m6!1s0x2e68e9f73bd0e3c5:0x5fd90dfc83a8ef78!2sEnima+Poultry+Shop!8m2!3d-6.9566072!4d107.595386!16s%2Fg%2F11sq51vwfj!3m5!1s0x2e68e8c2518ada75:0xd91f3a44f2439a55!8m2!3d-6.9565518!4d107.5952788!16s%2Fg%2F11trxbfwlx?entry=ttu&g_ep=EgoyMDI1MDEyMC4wIKXMDSoASAFQAw%3D%3D",
         "btnText": "Petunjuk Ke Lokasi"
      
       }
