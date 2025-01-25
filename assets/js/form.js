@@ -17,17 +17,21 @@ const firebaseConfig = {
 // Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
-const now = new Date();
-const formattedDate = now.toLocaleDateString('id-ID') + ' ' + now.toLocaleTimeString('id-ID', { 
-    hour: '2-digit', 
-    minute: '2-digit', 
-    second: '2-digit' 
-}).replace(/\./g, ':'); // Replace all dots with colons
-
-
-console.log(formattedDate);
-
+// Fungsi untuk format Firestore Timestamp (seconds) ke format Indonesia
+function formatTimestamp(timestamp) {
+    // Mengonversi seconds dari Firestore Timestamp ke milidetik
+    const date = new Date(timestamp.seconds * 1000); // Mengonversi seconds ke milidetik
+  
+    // Format tanggal (dd/mm/yyyy)
+    const formattedDate = date.toLocaleDateString("id-ID");
+  
+    // Format waktu (hh:mm:ss)
+    const formattedTime = date.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+  
+    return `${formattedDate} ${formattedTime}`;
+  }
+  
+  
 // Fungsi untuk menambahkan data RSVP ke Firestore
 async function tambahRSVP(event) {
     event.preventDefault(); // Mencegah pengiriman form default agar data tetap diproses dengan JS
@@ -39,26 +43,22 @@ async function tambahRSVP(event) {
     const total = document.getElementById("total").value;
 
     try {
-        // Menambahkan data ke koleksi "rsvp"
         await addDoc(collection(db, "rsvp"), {
-            datetime: formattedDate,
+            datetime: new Date(),
             name: name,
             message: message,
             attendance: attendance,
             total: total
         });
-        console.log("RSVP berhasil dikirim!");
-        pushNotify("success","RSVP berhasil dikirim!",'')
-
-        // Memuat ulang data RSVP setelah kirim
         tampilkanRSVP();
-        submitButton.disabled = false; // Disable the button
+        clearForm();
+        pushNotify("success","RSVP berhasil dikirim!",'')
+        
     } catch (error) {
         console.error("Error menambahkan RSVP: ", error);
         submitButton.disabled = false; // Disable the button
     }
 }
-    document.querySelector('.btn-open-invitation').onclick = tampilkanRSVP();
 
 // Fungsi untuk membaca data RSVP dari Firestore dan menampilkannya di halaman
 async function tampilkanRSVP() {
@@ -75,8 +75,8 @@ async function tampilkanRSVP() {
             const data = doc.data();
 
             // Mengambil nilai yang akan digunakan
-            const datetime = data.datetime || "Tidak ada nama"; // Default jika Name kosong
-            const name = data.name || "Tidak ada nama"; // Default jika Name kosong
+            const datetime = formatTimestamp(data.datetime) || "Tidak ada nama"; // Default jika Name kosong
+            const name = toTitleCase(data.name) || "Tidak ada nama"; // Default jika Name kosong
             const message = data.message || "Tidak ada pesan"; // Default jika Message kosong
             const attendanceIcon = data.attendance === "Hadir"
                 ? "bxs-badge-check text-success"
@@ -113,7 +113,31 @@ async function tampilkanRSVP() {
     }
 }
 
+function clearForm() {
+    const formGroup = document.getElementById('frm-total');
+    const submitButton = document.getElementById("submitButton");
+    document.getElementById("name").value = '';       
+    document.getElementById("message").value = '';    
+    document.getElementById("attendance").value = 'Hadir'; 
+    document.getElementById("total").value = '1';     
+    submitButton.disabled = false; // Disable the button 
+    document.getElementById("total").disabled = false;     
+    formGroup.hidden = false; // Disable the button 
+}
 
 // Menambahkan event listener untuk menangani submit form
 document.getElementById("rsvpForm").addEventListener("submit", tambahRSVP);
 
+// Menambahkan event listener untuk menangani submit form
+document.getElementById("btn-rsvp").addEventListener("click", tampilkanUcapan);
+
+// Fungsi untuk menampilkan RSVP
+function tampilkanUcapan() {
+  const ucapanContainer = document.getElementById("ucapan"); // Mendapatkan elemen kontainer dari HTML
+
+  if (!ucapanContainer || ucapanContainer.innerHTML.trim() === "") {
+    tampilkanRSVP();
+  } else {
+    console.log("Data sudah ditampilkan");
+  }
+}

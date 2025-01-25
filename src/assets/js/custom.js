@@ -15,29 +15,20 @@ function toTitleCase(str) {
 
     document.getElementById('attendance').addEventListener('change', function () {
         const attendanceValue = this.value;
-        const totalSelect = document.getElementById('total');
-        const hiddenTotal = document.getElementById('hiddenTotal');
+        const total = document.getElementById('total');
         const formGroup = document.getElementById('frm-total');
     
         if (attendanceValue === 'Hadir') {
-            totalSelect.value = '1'; // Set default value ke 1
-            totalSelect.disabled = false; // Aktifkan kembali dropdown
-            hiddenTotal.value = totalSelect.value; // Set nilai input tersembunyi
+            total.value = '1'; // Set default value ke 1
+            total.disabled = false; // Aktifkan kembali dropdown
             formGroup.hidden = false; // Nonaktifkan dropdown
         } else if (attendanceValue === 'Tidak Hadir') {
-            totalSelect.value = '0'; // Set value ke 0
-            totalSelect.disabled = true; // Nonaktifkan dropdown
+            total.value = '0'; // Set value ke 0
+            total.disabled = true; // Nonaktifkan dropdown
             formGroup.hidden = true; // Nonaktifkan dropdown
-            hiddenTotal.value = '0'; // Set nilai input tersembunyi ke 0
         }
     });
-    
-    // Perbarui nilai input tersembunyi saat dropdown diubah
-    document.getElementById('total').addEventListener('change', function () {
-        var hiddenTotal = document.getElementById('hiddenTotal');
-        hiddenTotal.value = this.value;
-    });    
-    
+
     // Fungsi untuk mendapatkan parameter URL secara manual
  function getQueryParameter(param) {
         // Ambil query string dari URL
