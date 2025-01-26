@@ -1,3 +1,4 @@
+
 // Import Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, orderBy, query } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
@@ -17,6 +18,55 @@ const firebaseConfig = {
 // Inisialisasi Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
+// Fungsi untuk membaca data RSVP dari Firestore dan menampilkannya di halaman
+async function getDataDash() {
+    try {
+        // Menyusun query untuk mengurutkan data berdasarkan datetime yang terbaru
+        const rsvpQuery = query(collection(db, "rsvp"), orderBy("datetime", "desc"));
+        const querySnapshot = await getDocs(rsvpQuery);
+
+        const ucapanContainer = document.getElementById("tb_rsvp"); // Mendapatkan elemen kontainer dari HTML
+        ucapanContainer.innerHTML = ""; // Membersihkan kontainer sebelumnya
+        
+        // Iterasi melalui setiap dokumen dalam query
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+
+            // Mengambil nilai yang akan digunakan
+            const datetime = formatTimestamp(data.datetime) || "Tidak ada nama"; // Default jika Name kosong
+            const name = toTitleCase(data.name) || "Tidak ada nama"; // Default jika Name kosong
+            const message = data.message || "Tidak ada pesan"; // Default jika Message kosong
+            const attendanceIcon = data.attendance === "Hadir"
+                ? "bxs-badge-check text-success"
+                : "bxs-x-circle text-danger";
+            const total = data.total || 0 ;
+            
+                // Menyusun HTML menggunakan template literal
+                const ucapanHTML = `
+                    <ol class="list-group list-group-numbered mt-2">
+                        <li class="list-group-item d-flex align-items-center">
+                            <!-- Kolom Konten -->
+                            <div class="flex-grow-1">
+                                <!-- Nama dan Pesan -->
+                                <span class="font-weight-bold nameo">
+                                    <i class='konfrim bx ${attendanceIcon}'></i> ${name} - ${data.attendance} - ${total} Orang
+                                </span>
+                                <br>
+                                <div class="msg text-muted">"${message} - ${datetime}"</div>
+                            </div>
+                        </li>
+                    </ol>
+                    `;
+                    
+                    // Menambahkan HTML ke dalam kontainer
+                    ucapanContainer.innerHTML += ucapanHTML;
+                });
+            } catch (error) {
+        console.error("Error saat menampilkan data RSVP:", error);
+    }
+}
+
 // Fungsi untuk format Firestore Timestamp (seconds) ke format Indonesia
 function formatTimestamp(timestamp) {
     // Mengonversi seconds dari Firestore Timestamp ke milidetik
@@ -126,18 +176,32 @@ function clearForm() {
 }
 
 // Menambahkan event listener untuk menangani submit form
-document.getElementById("rsvpForm").addEventListener("submit", tambahRSVP);
+const rsvpForm = document.getElementById("rsvpForm");
+if (rsvpForm) {
+  rsvpForm.addEventListener("submit", tambahRSVP);
+}
 
-// Menambahkan event listener untuk menangani submit form
-document.getElementById("btn-rsvp").addEventListener("click", tampilkanUcapan);
+// Menambahkan event listener untuk menangani tombol RSVP
+const btnRSVP = document.getElementById("btn-rsvp");
+if (btnRSVP) {
+  btnRSVP.addEventListener("click", tampilkanUcapan);
+}
+
+// Menambahkan event listener untuk tombol dashboard
+const btnDash = document.getElementById("btn-dash");
+if (btnDash) {
+  btnDash.addEventListener("click", getDataDash);
+}
 
 // Fungsi untuk menampilkan RSVP
 function tampilkanUcapan() {
-  const ucapanContainer = document.getElementById("ucapan"); // Mendapatkan elemen kontainer dari HTML
+    const ucapanContainer = document.getElementById("ucapan"); // Mendapatkan elemen kontainer dari HTML
 
-  if (!ucapanContainer || ucapanContainer.innerHTML.trim() === "") {
+    if (!ucapanContainer || ucapanContainer.innerHTML.trim() === "") {
     tampilkanRSVP();
   } else {
-    console.log("Data sudah ditampilkan");
-  }
+      console.log("Data sudah ditampilkan");
+    }
 }
+
+
