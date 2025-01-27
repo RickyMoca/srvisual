@@ -1,0 +1,91 @@
+<html>
+<meta charset='UTF-8' />
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5'
+  name='viewport' />
+<meta content='IE=edge' http-equiv='X-UA-Compatible' />
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="src/code/script.js"></script>
+<link href="src/code/style.css" rel="stylesheet" type="text/css" />
+
+<head>
+  <title>Seny Indriani </title>
+  <link rel="icon" type="image/svg+xml" href="src/media/mail.gif">
+
+</head>
+
+<body>
+
+  <div id="bodyblur">
+    <!-- Wallpaper / Background --><img src="src/media/BG.jpg" id="wallpaper" />
+  </div>
+
+  <div class="kumpulanstiker">
+    <!-- Stiker untuk Konten -->
+    <img src="0654a5c93ece8510817e3492828cce4d.gif" id="stiker1" />
+    <img src="https://feeldreams.github.io/gigitin.gif" id="stiker2" />
+    <img src="https://feeldreams.github.io/mndkat.gif" id="stiker3" />
+    <img src="https://feeldreams.github.io/cilukba.gif" id="stiker4" />
+  </div>
+
+  <div id='Content'>
+
+    <div id="suratin" onClick="memulai();audio.play();">
+      <!-- Surat --><img src="src/media/mail.gif" />
+    </div>
+    <p id="ket">Teken gambar suratnya ya</p>
+    <div>
+      <!-- Foto Akhir -->
+      <img src="https://feeldreams.github.io/pandapanah.gif" id="fotoakhir" />
+      <img src="https://feeldreams.github.io/emawh.gif" id="fotoakhir2" />
+    </div>
+
+    <div>
+      <blockquote id='bq'>
+        <p id="kalimat"></p>
+        <p id="kalimatc"></p>
+      </blockquote>
+    </div>
+
+    <div id="pesann">
+      <p id="satu"></p>
+    </div>
+
+    <!-- Tombol Kirim Pesan -->
+    <div id="Tombol">
+      <a onClick="sjawab()">
+        <b>Lihat Kejutan</b>
+      </a>
+    </div>
+    
+
+  </div>
+
+  <script src="src/code/sayang-script.js"></script>
+  <script src="src/code/setting.js"></script>
+
+  <script type="text/javascript">
+    
+    async function jawab() {
+      // await swals.fire('Kirim pesan ke<br>WhatsApp aku, ya!');
+      window.location = "src/code/moment-copy.html";
+    }
+
+    audioAwal();
+
+    async function pesan() {
+      
+      for (const message of messages) {
+        await swalst.fire({
+          title: message.title,
+          timer: 6000,
+        });
+      }
+      settingKata2();
+      setTimeout(kpemb, 500);
+  
+      }
+  </script>
+
+</body>
+</html>
