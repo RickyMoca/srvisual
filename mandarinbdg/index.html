@@ -11,25 +11,71 @@
       max-width: 500px;
       height: 500px;
       margin: auto;
+     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500"><rect x="0" y="0" width="500" height="500" fill="none" stroke="%23DDD" stroke-width="2"/><line x1="0" y1="0" x2="500" y2="500" stroke="%23DDD"/><line x1="500" y1="0" x2="0" y2="500" stroke="%23DDD"/><line x1="250" y1="0" x2="250" y2="500" stroke="%23DDD"/><line x1="0" y1="250" x2="500" y2="250" stroke="%23DDD"/><text x="470" y="490" font-size="16" text-anchor="end" fill="%23DDD" font-family="Arial">mandarinbdg.id</text></svg>');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    #target {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+       /* Reset gaya default range */
+    input[type=range] {
+      -webkit-appearance: none; /* Chrome/Safari/Edge */
+      width: 100%;
+      height: 6px;
+      background: #ddd;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    /* Chrome, Edge, Safari */
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+      margin-top: -7px; /* penting agar thumb tepat sejajar */
+    }
+
+    /* Firefox */
+    input[type=range]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: red;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
 <div class="container py-4">
-  
+
+
   <div class="row">
+    
     <!-- Form Input -->
-    <div class="col-md-4">
+    <div class="col-md-4 mb-4">
       <div class="card shadow-sm">
         <div class="card-body">
-         
+            <!-- Logo dan Judul -->
+  <div class="text-center mb-4">
+    <h2>
+      <img src="mandarinbdg/logo.png" alt="Logo" style="width: 50px; height: auto; vertical-align: middle; margin-right: 10px;">
+      mandarinbdg.id
+    </h2>
+  </div>
           <div class="mb-3">
-            <h2><img src="logo.png" alt="Logo" style="width: 70px; height: auto; vertical-align: middle; margin-left: 8px;"> mandarinbdg.id</h2>
-         
-          </div>
-          <div class="mb-3">
-           <label for="stroke-delay" class="form-label">Karakter Hanzi :</label>
+            <label for="hanzi-char" class="form-label">Karakter Hanzi:</label>
             <input type="text" id="hanzi-char" class="form-control" value="爱" maxlength="1">
           </div>
           <div class="mb-3">
@@ -45,17 +91,20 @@
             <input type="number" id="start-delay" class="form-control" value="5000">
           </div>
           <div class="mb-3">
-            <label for="animation-speed" class="form-label">Kecepatan Animasi: <span id="speed-value">0.5</span></label>
-            <input type="range" class="form-range" min="0.1" max="5" step="0.1" id="animation-speed" value="0.5">
+            <label for="animation-speed" class="form-label">
+              Kecepatan Animasi: <span id="speed-value">1</span>
+            </label>
+            <input type="range" class="form-range" min="0.5" max="5" step="0.5" id="animation-speed" value="1">
           </div>
-          <button onclick="renderHanzi()" class="btn btn-primary w-100">Tampilkan</button>
+          <button onclick="renderHanzi()" class="btn btn-danger w-100">Tampilkan</button>
         </div>
       </div>
     </div>
 
-    <!-- Output Hanzi -->
-    <div class="col-md-8 d-flex align-items-center justify-content-center">
-      <div id="hanzi-target"></div>
+    <!-- Animasi dan Stroke -->
+    <div class="col-md-8">
+      <div id="hanzi-target" class="mb-4"></div>
+      <div id="target"></div>
     </div>
   </div>
 </div>
@@ -63,12 +112,12 @@
 <script>
   let writer;
 
-  // Update tampilan label speed saat slider digeser
   document.getElementById('animation-speed').addEventListener('input', function () {
     document.getElementById('speed-value').textContent = this.value;
   });
 
   function renderHanzi() {
+    renderHanzi2();
     const char = document.getElementById('hanzi-char').value.trim();
     const strokeDelay = parseInt(document.getElementById('stroke-delay').value);
     const loopDelay = parseInt(document.getElementById('loop-delay').value);
@@ -90,18 +139,50 @@
       delayBetweenStrokes: strokeDelay,
       delayBetweenLoops: loopDelay,
       strokeAnimationSpeed: animationSpeed,
-      radicalColor: '#DE2910'
+      radicalColor: '#000000',
+      strokeColor: '#000000',
+      drawingColor: '#980001',
+      highlightColor: '#980001'
     });
-
-    writer.showOutline();
 
     setTimeout(() => {
       writer.loopCharacterAnimation();
     }, startDelay);
   }
 
-  // Jalankan otomatis pertama kali
-  renderHanzi();
+  function renderFanningStrokes(target, strokes) {
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.style.width = '100px';
+    svg.style.height = '100px';
+    svg.style.border = '1px solid #EEE';
+    svg.style.marginTop = '5px';
+    var group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+    var transformData = HanziWriter.getScalingTransform(75, 75);
+    group.setAttributeNS(null, 'transform', transformData.transform);
+    svg.appendChild(group);
+
+    strokes.forEach(function(strokePath) {
+      var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttributeNS(null, 'd', strokePath);
+      path.style.fill = '#555';
+      group.appendChild(path);
+    });
+
+    target.appendChild(svg);
+  }
+
+  function renderHanzi2() {
+    document.getElementById('target').innerHTML = '';
+    const char = document.getElementById('hanzi-char').value.trim();
+    HanziWriter.loadCharacterData(char).then(function(charData) {
+      var target = document.getElementById('target');
+      for (var i = 0; i < charData.strokes.length; i++) {
+        var strokesPortion = charData.strokes.slice(0, i + 1);
+        renderFanningStrokes(target, strokesPortion);
+      }
+    });
+  }
 </script>
 
 </body>
